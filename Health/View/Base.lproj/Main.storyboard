@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eyD-iQ-xuD">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDZ-Rp-C7k">
+                                <rect key="frame" x="80.666666666666686" y="370.33333333333331" width="214" height="71.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="55"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GDZ-Rp-C7k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qrd-Zc-hTX"/>
+                            <constraint firstItem="GDZ-Rp-C7k" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="v32-26-rq4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fAJ-Hc-xVh"/>
+                    <connections>
+                        <segue destination="RVp-DK-rO1" kind="show" id="Uol-GB-UzV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="239" y="78"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Ac-1b-sa7">
+            <objects>
+                <viewController id="RVp-DK-rO1" customClass="ViewController" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nuE-vH-GaV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wmX-kk-N6H">
+                                <rect key="frame" x="49" y="244" width="277" height="324"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQt-F7-7FO">
+                                        <rect key="frame" x="34.666666666666686" y="0.0" width="208" height="108"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                        <state key="normal" title="타이머"/>
+                                        <connections>
+                                            <segue destination="Wwi-ja-GmL" kind="show" id="yT0-bQ-zzL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfK-52-9Tp">
+                                        <rect key="frame" x="0.0" y="108" width="277" height="108"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                        <state key="normal" title="운동기록"/>
+                                        <connections>
+                                            <segue destination="3wC-bB-aYa" kind="show" id="4nf-4K-AlJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B27-Xw-mQG">
+                                        <rect key="frame" x="0.0" y="216" width="277" height="108"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                        <state key="normal" title="잠들시간"/>
+                                        <connections>
+                                            <segue destination="trp-4t-5Dr" kind="show" id="OoJ-CN-jo6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wmX-kk-N6H" firstAttribute="centerX" secondItem="nuE-vH-GaV" secondAttribute="centerX" id="gAU-rD-XgQ"/>
+                            <constraint firstItem="wmX-kk-N6H" firstAttribute="centerY" secondItem="nuE-vH-GaV" secondAttribute="centerY" id="gXn-Hx-4or"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MqF-kT-wXx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FFt-6O-E4M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="215-Bb-vvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1093" y="78"/>
+        </scene>
+        <!--TimerVC-->
+        <scene sceneID="Bhy-6a-BCc">
+            <objects>
+                <viewController restorationIdentifier="TimerVC" storyboardIdentifier="TimerVC" id="bms-H4-fay" customClass="TimerVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1mN-Qe-Y3l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xi7-aD-EXV">
+                                <rect key="frame" x="72" y="199" width="282" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="타이머" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lw-ig-usf">
+                                <rect key="frame" x="136" y="94" width="151" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="58"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="TimerStart" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gth-xZ-Lgk">
+                                <rect key="frame" x="84" y="450" width="106" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="61"/>
+                                <state key="normal" title="시작"/>
+                                <connections>
+                                    <action selector="onTimerStart:" destination="bms-H4-fay" eventType="touchUpInside" id="flS-aP-u93"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="RestStart" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21W-3v-xVw">
+                                <rect key="frame" x="234" y="450" width="106" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="61"/>
+                                <state key="normal" title="휴식"/>
+                                <connections>
+                                    <action selector="onRestStart:" destination="bms-H4-fay" eventType="touchUpInside" id="u10-Jc-6Bx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GV-ZY-cg0">
+                                <rect key="frame" x="159" y="619" width="97" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
+                                <state key="normal" title="종료"/>
+                                <connections>
+                                    <action selector="onTimerEnd:" destination="bms-H4-fay" eventType="touchUpInside" id="6rJ-bn-q9t"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="휴식시간 설정" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rbr-XI-8EF">
+                                <rect key="frame" x="239" y="408" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYM-Ww-rwz">
+                                <rect key="frame" x="150" y="731" width="123" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="DeleteDB"/>
+                                <connections>
+                                    <action selector="deleteDB:" destination="bms-H4-fay" eventType="touchUpInside" id="qzH-ao-bTb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 세트 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0b-z8-oT1">
+                                <rect key="frame" x="84" y="408" width="79" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.52808404059579528" green="0.52808404059579528" blue="0.52808404059579528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="CaS-Xb-scX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kHl-Ml-cWH"/>
+                    <connections>
+                        <outlet property="restStart" destination="21W-3v-xVw" id="I3T-Fk-qpo"/>
+                        <outlet property="restTimeSetting" destination="rbr-XI-8EF" id="AXp-m8-NCV"/>
+                        <outlet property="setCountLabel" destination="u0b-z8-oT1" id="wt6-cg-akx"/>
+                        <outlet property="timeLabel" destination="xi7-aD-EXV" id="UVW-f5-E9U"/>
+                        <outlet property="timerEnd" destination="6GV-ZY-cg0" id="7cq-fq-lZk"/>
+                        <outlet property="timerStart" destination="Gth-xZ-Lgk" id="0Ts-4m-hhq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="11f-ws-xAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2779.7101449275365" y="-563.16964285714278"/>
+        </scene>
+        <!--Log Table Controller-->
+        <scene sceneID="PyN-EG-MAI">
+            <objects>
+                <viewController restorationIdentifier="LogVC" storyboardIdentifier="LogVC" id="Li9-ut-61O" customClass="LogTableController" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V0k-yj-XOL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="운동기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vf-Bb-Eii">
+                                <rect key="frame" x="107" y="81" width="201" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="58"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rV8-5X-tfz">
+                                <rect key="frame" x="0.0" y="155" width="414" height="707"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogTableCell" id="jWo-Zo-IfU" customClass="LogTableCell" customModule="Health" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jWo-Zo-IfU" id="cW2-bH-jEx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="125" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxs-e0-1eU">
+                                                    <rect key="frame" x="15" y="11" width="31" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LogTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9w-3X-xk0">
+                                                    <rect key="frame" x="313" y="11" width="81" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="restTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOQ-mo-SeO">
+                                                    <rect key="frame" x="174" y="11" width="88" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="workoutTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPL-1D-Hfm">
+                                                    <rect key="frame" x="59" y="11" width="99" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="logNumber" destination="rxs-e0-1eU" id="rFT-eD-OtY"/>
+                                            <outlet property="logTime" destination="x9w-3X-xk0" id="bKh-vb-fz3"/>
+                                            <outlet property="restTime" destination="LOQ-mo-SeO" id="RIp-ee-rAi"/>
+                                            <outlet property="workoutTime" destination="sPL-1D-Hfm" id="84Y-7L-YVk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hVc-Vg-IeS"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="rV8-5X-tfz" id="StQ-VA-uYY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLM-5P-nSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3618.840579710145" y="-563.16964285714278"/>
+        </scene>
+        <!--Total LogVC-->
+        <scene sceneID="4tA-TU-nWn">
+            <objects>
+                <viewController id="3wC-bB-aYa" customClass="TotalLogVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5hj-go-iEh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECJ-92-GiA" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="142" width="335" height="616"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9di-MW-95v">
+                                <rect key="frame" x="100" y="98" width="175" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ECJ-92-GiA" firstAttribute="leading" secondItem="LaX-an-noQ" secondAttribute="leading" constant="20" id="17X-qh-Fog"/>
+                            <constraint firstItem="LaX-an-noQ" firstAttribute="trailing" secondItem="ECJ-92-GiA" secondAttribute="trailing" constant="20" id="7Qs-oz-rEL"/>
+                            <constraint firstItem="9di-MW-95v" firstAttribute="centerX" secondItem="5hj-go-iEh" secondAttribute="centerX" id="Fph-qH-sUo"/>
+                            <constraint firstItem="ECJ-92-GiA" firstAttribute="top" secondItem="9di-MW-95v" secondAttribute="bottom" constant="10" id="Wf3-5n-4dt"/>
+                            <constraint firstItem="9di-MW-95v" firstAttribute="leading" secondItem="LaX-an-noQ" secondAttribute="leading" constant="100" id="cPM-9j-ig8"/>
+                            <constraint firstItem="LaX-an-noQ" firstAttribute="trailing" secondItem="9di-MW-95v" secondAttribute="trailing" constant="100" id="gfG-Ny-DNp"/>
+                            <constraint firstItem="LaX-an-noQ" firstAttribute="bottom" secondItem="ECJ-92-GiA" secondAttribute="bottom" constant="20" id="qLr-GO-1oz"/>
+                            <constraint firstItem="9di-MW-95v" firstAttribute="top" secondItem="LaX-an-noQ" secondAttribute="top" constant="10" id="u6k-XM-ELV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LaX-an-noQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nB0-gB-eUH"/>
+                    <connections>
+                        <outlet property="chartView" destination="ECJ-92-GiA" id="M3t-R2-Dbu"/>
+                        <outlet property="datePickerPreview" destination="9di-MW-95v" id="ZUu-0z-dEm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YcX-ps-3Gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="78"/>
+        </scene>
+        <!--ScrollVC-->
+        <scene sceneID="HHd-r4-Aen">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Wwi-ja-GmL" customClass="ScrollVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="aM0-gC-7JD"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lpy-1o-RbG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="-563"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I6t-wn-0MQ">
+            <objects>
+                <navigationController id="eyD-iQ-xuD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Txk-HT-hM1">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.96470588239999999" green="0.93333333330000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RVp-DK-rO1" kind="relationship" relationship="rootViewController" id="yWR-N4-0an"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HDp-VJ-0et" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-633" y="78"/>
+        </scene>
+        <!--BedtimeVC-->
+        <scene sceneID="6l5-gW-pgo">
+            <objects>
+                <viewController id="trp-4t-5Dr" customClass="BedtimeVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d7A-fN-pFH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="qKs-2V-MkV">
+                                <rect key="frame" x="35.333333333333343" y="97.333333333333314" width="304.66666666666663" height="617.33333333333348"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠 들 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q08-pE-vJO">
+                                        <rect key="frame" x="26.333333333333314" y="0.0" width="252" height="77.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iT1-83-3wB">
+                                        <rect key="frame" x="88.666666666666657" y="113.66666666666669" width="127" height="32"/>
+                                        <segments>
+                                            <segment title="잠자기"/>
+                                            <segment title="일어나기"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentChanged:" destination="trp-4t-5Dr" eventType="valueChanged" id="EcQ-Il-1SS"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 시간에 일어나려면" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSD-h0-4f2">
+                                        <rect key="frame" x="8.3333333333333428" y="180.66666666666669" width="287.66666666666663" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="일어날 시간 선택" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0Q-Jw-z2C">
+                                        <rect key="frame" x="22.333333333333343" y="258.66666666666669" width="259.66666666666663" height="49.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 시간에 자야 합니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJz-e8-pWp">
+                                        <rect key="frame" x="0.0" y="344.33333333333337" width="304.66666666666669" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4Hs-1q-rSD">
+                                        <rect key="frame" x="82.666666666666657" y="422.33333333333326" width="139" height="195"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL9-lG-Xdf">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="65"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
+                                                <color key="textColor" red="0.91980725526809692" green="0.25912417045021169" blue="0.031187673236475397" alpha="0.69517872431506844" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXb-vq-40n">
+                                                <rect key="frame" x="0.0" y="65" width="139" height="65"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
+                                                <color key="textColor" red="0.85416005710659904" green="0.74470770902554217" blue="0.12177172392347964" alpha="0.78028681506849318" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPX-u7-Ujj">
+                                                <rect key="frame" x="0.0" y="130" width="139" height="65"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
+                                                <color key="textColor" red="0.084964380282054067" green="0.36185655373362269" blue="0.83921568629999999" alpha="0.74162564212328763" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qKs-2V-MkV" firstAttribute="centerX" secondItem="d7A-fN-pFH" secondAttribute="centerX" id="1tv-P9-Htk"/>
+                            <constraint firstItem="qKs-2V-MkV" firstAttribute="centerY" secondItem="d7A-fN-pFH" secondAttribute="centerY" id="7qo-JF-QJk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TL4-A3-1ey"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2DM-wg-fhI"/>
+                    <connections>
+                        <outlet property="aboveLabel" destination="sSD-h0-4f2" id="dHJ-qq-CSH"/>
+                        <outlet property="sleepAndWakeSegment" destination="iT1-83-3wB" id="xpv-IQ-lqM"/>
+                        <outlet property="timeSelect" destination="U0Q-Jw-z2C" id="b3V-yI-m2L"/>
+                        <outlet property="titleLabel" destination="Q08-pE-vJO" id="1eb-TQ-qOx"/>
+                        <outlet property="underLabel" destination="aJz-e8-pWp" id="wzH-f0-Xos"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caa-AX-1Ol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924.6376811594205" y="767.41071428571422"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yWR-N4-0an"/>
+    </inferredMetricsTieBreakers>
+</document>
