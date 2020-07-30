@@ -11,56 +11,53 @@ import UIKit
 class BedtimeVC: UIViewController {
     @IBOutlet weak var timeSelect: UITextField!
     @IBOutlet weak var sleepAndWakeSegment: UISegmentedControl!
-    let datePicker = UIDatePicker()
+   
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var aboveLabel: UILabel!
     @IBOutlet weak var underLabel: UILabel!
+  
+    @IBOutlet weak var resultTimeStack: UIStackView!
     
     enum sleepAndWake {
         case sleep
         case wake
-        
     }
+    let datePicker = UIDatePicker()
+    var sleepSignal: sleepAndWake?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        var component = DateComponents()
+        component.hour = 7
+        component.minute = 0
+        let calendar = Calendar.current
+        
+        
+        
         datePicker.locale = Locale(identifier: "en_GB")
         datePicker.minuteInterval = 5
-        datePicker.date = Date()
+        datePicker.date = calendar.date(from: component)!
+        
+
+        
+        timeSelect.text = formatter.string(from: datePicker.date)
+        sleepSignal = sleepAndWake.sleep
         
         createPickerView()
+        changeStatus(sleepSignal ?? sleepAndWake.sleep,  calculateSleepTime(datePicker.date, sleepSignal ?? sleepAndWake.sleep))
         
     }
     @IBAction func segmentChanged(_ sender: Any) {
-        var titleLabel = ""
-        var placeholderLabel = ""
-        var aboveLabel = ""
-        var underLabel = ""
-        var sleepSignal: sleepAndWake?
-//        var resultTime: [Date] = calculateSleepTime(datePicker.date)
-        
-        switch sleepAndWakeSegment.selectedSegmentIndex {
-        case 0:
-            titleLabel = "잠 들 시간"
-            placeholderLabel = "일어 날 시간 선택"
-            aboveLabel = "이 시간에 일어나려면"
-            underLabel = "이 시간에 자야 합니다."
+        if sleepAndWakeSegment.selectedSegmentIndex == 0 {
             sleepSignal = sleepAndWake.sleep
-        case 1:
-            titleLabel = "일어날 시간"
-            placeholderLabel = "잠 잘 시간 선택"
-            aboveLabel = "이 시간에 잠들면"
-            underLabel = "이 시간에 일어나야 합니다."
+        }  else {
             sleepSignal = sleepAndWake.wake
-        default:
-            return
         }
-        self.titleLabel.text = titleLabel
-        self.aboveLabel.text = aboveLabel
-        self.underLabel.text = underLabel
-        self.timeSelect.placeholder = placeholderLabel
+       
+        changeStatus(sleepSignal ?? sleepAndWake.sleep,  calculateSleepTime(datePicker.date, sleepSignal ?? sleepAndWake.sleep))
         
-        print(calculateSleepTime(datePicker.date, sleepSignal ?? sleepAndWake.sleep))
     }
     func createPickerView() {
         let toolBar = UIToolbar()
@@ -75,40 +72,72 @@ class BedtimeVC: UIViewController {
         datePicker.datePickerMode = .time
         
     }
+    
     @objc func dismissPickerView() {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         
         self.view.endEditing(true)
         timeSelect.text = "\(formatter.string(from: datePicker.date))"
-        print( calculateSleepTime(datePicker.date, sleepAndWake.sleep))
-        
+       
+       
+        changeStatus(sleepSignal ?? sleepAndWake.sleep,  calculateSleepTime(datePicker.date, sleepSignal ?? sleepAndWake.sleep))
        
     }
+    
     func calculateSleepTime(_ pickedTime: Date, _ sleepAndWake: sleepAndWake) -> [Date] {
-        var sleepTime: Date?
-        var wakeTime: Date?
-        var resultTimes: [Date]?
+        var resultTime: [Date]? = []
         
         switch sleepAndWake {
         case .sleep:
             for i in 3 ... 5 {
-                resultTimes?.append(Date(timeInterval: TimeInterval(3600 * i), since: pickedTime))
+                resultTime?.append(Date(timeInterval: -TimeInterval(5400*i), since: pickedTime))
             }
+          
+            print("sleep")
         case .wake:
-            for i in 4 ... 6 {
-               resultTimes?.append(Date(timeInterval: TimeInterval(3600 * i), since: pickedTime))
-           }
-        default:
-            for i in 3 ... 5 {
-                resultTimes?.append(Date(timeInterval: TimeInterval(3600 * i), since: pickedTime))
+            for j in 4 ... 6 {
+                resultTime?.append(Date(timeInterval: TimeInterval(5400*j), since: pickedTime))
             }
+            print("wake")
+        }
+        return resultTime!
+    }
+
+    
+    func changeStatus(_ status: sleepAndWake, _ resultTime: [Date]) {
+        var titleLabel = ""
+        var placeholderLabel = ""
+        var aboveLabel = ""
+        var underLabel = ""
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+        switch status {
+            case .sleep:
+                titleLabel = "잠 들 시간"
+                placeholderLabel = "일어 날 시간 선택"
+                aboveLabel = "이 시간에 일어나려면"
+                underLabel = "이 시간에 자야 합니다."
+                
+            case .wake:
+                titleLabel = "일어날 시간"
+                placeholderLabel = "잠 잘 시간 선택"
+                aboveLabel = "이 시간에 잠들면"
+                underLabel = "이 시간에 일어나야 합니다."
         }
         
+        self.titleLabel.text = titleLabel
+        self.aboveLabel.text = aboveLabel
+        self.underLabel.text = underLabel
+        self.timeSelect.placeholder = placeholderLabel
         
-        return resultTimes!
+        for i in 0 ..< resultTime.count {
+            (self.resultTimeStack.subviews[i] as! UILabel).text = formatter.string(from: resultTime[i])
+        }
+       
     }
-    
     
 }
 // 기상시간 계산 현재시간 기준 설정시간 - 90min * 3/4/5

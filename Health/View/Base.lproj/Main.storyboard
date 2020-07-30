@@ -362,6 +362,8 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="일어날 시간 선택" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0Q-Jw-z2C">
                                         <rect key="frame" x="22.333333333333343" y="258.66666666666669" width="259.66666666666663" height="49.666666666666686"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -374,16 +376,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="4Hs-1q-rSD">
                                         <rect key="frame" x="82.666666666666657" y="422.33333333333326" width="139" height="195"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL9-lG-Xdf">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXb-vq-40n">
                                                 <rect key="frame" x="0.0" y="0.0" width="139" height="65"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
-                                                <color key="textColor" red="0.91980725526809692" green="0.25912417045021169" blue="0.031187673236475397" alpha="0.69517872431506844" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.85416005710659904" green="0.36045108695385497" blue="0.0" alpha="0.78028681506849318" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXb-vq-40n">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfU-Z4-q7u">
                                                 <rect key="frame" x="0.0" y="65" width="139" height="65"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
-                                                <color key="textColor" red="0.85416005710659904" green="0.74470770902554217" blue="0.12177172392347964" alpha="0.78028681506849318" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.85416005709999998" green="0.74470770900000005" blue="0.1217717239" alpha="0.78028681509999998" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPX-u7-Ujj">
@@ -407,6 +409,7 @@
                     <navigationItem key="navigationItem" id="2DM-wg-fhI"/>
                     <connections>
                         <outlet property="aboveLabel" destination="sSD-h0-4f2" id="dHJ-qq-CSH"/>
+                        <outlet property="resultTimeStack" destination="4Hs-1q-rSD" id="lgW-0x-G9T"/>
                         <outlet property="sleepAndWakeSegment" destination="iT1-83-3wB" id="xpv-IQ-lqM"/>
                         <outlet property="timeSelect" destination="U0Q-Jw-z2C" id="b3V-yI-m2L"/>
                         <outlet property="titleLabel" destination="Q08-pE-vJO" id="1eb-TQ-qOx"/>
