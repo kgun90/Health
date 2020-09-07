@@ -9,165 +9,532 @@
 import UIKit
 import RealmSwift
 
-class TimerVC: UIViewController {
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var timerStart: UIButton!
-    @IBOutlet weak var timerEnd: UIButton!
-    @IBOutlet weak var restStart: UIButton!
-    @IBOutlet weak var restTimeSetting: UITextField!
-    @IBOutlet weak var setCountLabel: UILabel!
-    
-    var mTimer: Timer?
-    var time: Int = 0
-    let restTimes: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    
-    let now = Date()
-    let realm = try! Realm()
-    
-    var restTime = 60
-    var setCount = 1
-    
-    var tmpTime: Int?
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+protocol TimerDataDelegate {
+    func LogData(data: TimeLog)
+}
 
+class TimerVC: UIViewController {
+
+    @IBOutlet weak var timerMain: UIButton!
+    @IBOutlet weak var nextState: UIView!
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    @IBOutlet weak var timerStatusLabel: UILabel!
+    @IBOutlet weak var timerMainLabel: UILabel!
+    @IBOutlet weak var timerSubLabel: UILabel!
+   
+    @IBOutlet weak var timerTypeLabel: UILabel!
+    
+    @IBOutlet weak var setLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
+    
+    @IBOutlet weak var nextStateLabel: UILabel!
+    @IBOutlet weak var nextTimeLabel: UILabel!
+    
         
+    
+    enum timerStatus {
+        case preWorkout
+        case workoutStart
+        case restStart
+        case pause
+        case stop
+        case interval
     }
+    enum timerTypeState {
+        case countDown
+        case countUp
+        case roundInterval
+        case rest
+    }
+    struct colors {
+        let preWorkoutBackground = UIColor(red: 255.0/255.0, green: 156.0/255.0, blue:  36.0/255.0, alpha: 1.0)
+        let workoutBackground    = UIColor(red: 119.0/255.0, green: 221.0/255.0, blue: 119.0/255.0, alpha: 1.0)
+        let restBackground       = UIColor(red:   2.0/255.0, green: 125.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        let pauseBackground      = UIColor(red: 255.0/255.0, green: 221.0/255.0, blue:   0.0/255.0, alpha: 1.0)
+        let stopBackground       = UIColor(red: 110.0/255.0, green: 110.0/255.0, blue: 110.0/255.0, alpha: 1.0)
+        let intervalBackground   = UIColor(red: 255.0/255.0, green: 105.0/255.0, blue:  97.0/255.0, alpha: 1.0)
+        // UIColor 색상을 RG직접 부여할 때는 이와같이 사용한다.
+    }
+    
+    struct timeSet {
+        var preWorkout = 2
+        var workout    = 2
+        var rest       = 2
+        var interval   = 2
+        var stop       = 0
+        var pause      = 0
+    }
+    struct logData {
+        var workoutTime = 0
+        var restTime = 0
+        var logDate = Date()
+        var setNum = 0
+        var roundNum = 0
+    }
+
+    var totalSet     = 5
+    var currentSet   = 1
+    var totalRound   = 5
+    var currentRound = 1
+    var workoutTime = 0
+    var restTime = 0
+    
+    var delegate: TimerDataDelegate?
+    
+    var setUp: Int {
+        get {
+            return currentSet
+        }
+        set(newValue) {
+            if newValue < totalSet{
+                currentSet = newValue + 1
+            }
+        }
+    }
+    var roundUp: Int {
+        get {
+            return currentRound
+        }
+        set(newVal) {
+            if newVal < totalRound{
+                currentRound = newVal + 1
+            }
+        }
+    }
+    
+    struct labelSet {
+        let workout  = "WORKOUT"
+        let rest     = "REST"
+        let interval = "INTERVAL"
+        let pause    = "PAUSED"
+        let blank    = ""
+    }
+
+
+    
+    var status = timerStatus.stop
+    var type = timerTypeState.countDown
+    var timerType = timerTypeState.countDown
+    var nextStatus = timerStatus.stop
+    var timerSet = TimerAssets()
+    
+    let realm = try! Realm()
+
+    var mTimer: Timer?
+    let now = Date()
+    
+    var timerCount = 0
+    
+    var doubleTapSignal = false
+
+    var pauseState = timerStatus.workoutStart
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        restStart.isEnabled = false
-        createPickerView()
+        timerMain.layer.cornerRadius = 8
+        nextState.layer.cornerRadius = 8
+        
+        timerStateChange(status)
+        nextStateChage(status)
+        
+            
+        let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
+        singleTapGesture.numberOfTouchesRequired = 1
+        timerMain.addGestureRecognizer(singleTapGesture)
+        
+        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
+        doubleTapGesture.numberOfTapsRequired = 2
+        timerMain.addGestureRecognizer(doubleTapGesture)
+        
+        singleTapGesture.require(toFail: doubleTapGesture)
     }
-    
-    @IBAction func onTimerStart(_ sender: Any) {
-        btnSwitch()
-       
-        if mTimer != nil {
-            createDB()
+
+    @objc func handleSingleTap() {
+        if status != timerStatus.preWorkout && status != timerStatus.interval {
+            timerTapAction(status)
         }
-        initTimer()
-        mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
-         timeLabel.text = timeDisplay(time)
+    
+    }
+    @objc func handleDoubleTap() {
+        if status == timerStatus.pause || status == timerStatus.interval{
+            doubleTapSignal = true
+            timerTapAction(status)
+        }
+        
+       
+        
     }
     
-    
-    @IBAction func onRestStart(_ sender: Any) {
-        tmpTime = time
-        btnSwitch()
-        initTimer()
-        mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCountdown), userInfo: nil, repeats: true)
-        timeLabel.text = timeDisplay(restTime)
+//MARK: - Timer handling
+
+    @objc func timerCallback() {
+        if status != timerStatus.stop && status != timerStatus.pause {
+            timerCount -= 1
+            timerLabel.text = timeDisplay(timerCount)
+        } // timer 상태가 workoutStart, restStart, interval 일때 카운트 함
+        if timerCount == 0 {// && type == timerTypeState.countDown {
+            timerOff()
+            
+            timerTimeoutAction(status)
+        } // timeout 상태 (0이 될 때), 맞는 동작
+
+
+    }
+    func timerOn() {
+        if let timer = mTimer {
+            if !timer.isValid {
+                mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+            }
+        } else {
+            mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+        }
+    }
+    func timerOff() {
+        if mTimer != nil {
+            mTimer?.invalidate()
+            mTimer = nil
+        }
+    }
+    func timeDisplay(_ number: Int) -> String {
+       
+        if status == timerStatus.interval || status == timerStatus.preWorkout{
+            return "\(number)"
+        } else {
+            return String(format: "%02d:%02d", number/60, number%60)
+        }
+
+    }
+    func setRoundDisplay() {
+        if status != timerStatus.stop {
+           self.setLabel.text = "\(currentSet)/\(totalSet) SET"
+           self.roundLabel.text = "\(currentRound)/\(totalRound) ROUND"
+        } // timer가 동작할 때 set/round 수를 표시한다
     }
     
+    //MARK: - TimerTapAction
+    func timerTapAction(_ tapStatus: timerStatus) {
+        let setTime = timeSet()
+        timerOff()
+        
+        switch tapStatus {
+        case .preWorkout:
+            status = timerStatus.workoutStart
+            initTimer(status)
+            timerStateChange(status)
+        case .workoutStart:
+            status = timerStatus.pause
+            pauseState = timerStatus.workoutStart
+            workoutTime = setTime.workout - timerCount
+            timerStateChange(status)
+            // timer 동작 중 Tap 동작시 Pause 상태로 변경하며 이때 타이머도 일시정지함
+        case .restStart:
+            status = timerStatus.pause
+            pauseState = timerStatus.restStart
+            restTime = setTime.rest - timerCount
+            timerStateChange(status)
+            createDB()
+        case .pause:
+            if pauseState == timerStatus.workoutStart {
+                if doubleTapSignal {
+                    status = timerStatus.restStart
+                    initTimer(status)
+                } else {
+                    status = timerStatus.workoutStart
+                }
+                
+            } else if pauseState == timerStatus.restStart {
+                if doubleTapSignal {
+                    
+                    if currentSet < totalSet {
+                        status = timerStatus.workoutStart
+                    } else {
+                        status = timerStatus.interval
+                    }
+                    initTimer(status)
+                    countSetRound()
+                } else {
+                    status = timerStatus.restStart
+                }
+            }
+            
+            timerStateChange(status)
+           // pause 동작 중 Tap 동작시 Start 상태로 변경하며 타이머도 재동작
+        case .stop:
+
+            status = timerStatus.preWorkout
+            initTimer(status)
+            timerStateChange(status)
+            // stop 상태에서 Tap 동작시 Start 상태로 변경하며 타이머 초기화 및 동작 진행
+        case .interval:
+            if doubleTapSignal {
+                status = timerStatus.workoutStart
+                initTimer(status)
+                timerStateChange(status)
+            }
+            
+            
+           
+            // interval 상태에서 Tap 동작시 stop 상태로 변경하며 타이머 초기화 및 정지 진행
+        }
+        doubleTapSignal = false
+    }
+    
+    func timerTimeoutAction(_ statusGet: timerStatus) {
+        let setTime = timeSet()
+        timerOff()
+
+        switch statusGet {
+        case .preWorkout:
+            status = timerStatus.workoutStart
+            initTimer(status)
+            timerStateChange(status)
+            
+        case .workoutStart:
+            status = timerStatus.restStart
+            workoutTime = setTime.workout
+            initTimer(status)
+            timerStateChange(status)
+            
+        case .restStart:
+            if currentSet < totalSet {
+                status = timerStatus.workoutStart
+            } else {
+                status = timerStatus.interval
+            }
+            restTime = setTime.rest
+            createDB()
+     
+            countSetRound()
+            initTimer(status)
+            timerStateChange(status)
+            
+        case .pause:
+            timerStateChange(status)
+            
+        case .stop:
+            initTimer(status)
+            timerStateChange(status)
+            
+        case .interval:
+            status = timerStatus.workoutStart
+            initTimer(status)
+            timerStateChange(status)
+        }
+        
+    }
+
+
+    func countSetRound() {
+    
+        if currentSet < totalSet {
+            setUp = currentSet
+           
+        } else {
+            currentSet = 1
+            if currentRound < totalRound {
+                roundUp = currentRound
+                status = timerStatus.interval
+                timerStateChange(status)
+                initTimer(status)
+            } else {
+                status = timerStatus.stop
+                timerTimeoutAction(status)
+            }
+            
+        }
+   
+        
+    }
+
+    
+    func initTimer(_ status: timerStatus) {
+        let timeOf = timeSet()
+        switch status {
+        case .preWorkout:
+            timerCount = timeOf.preWorkout
+        case .workoutStart:
+            timerCount = timeOf.workout
+        case .restStart:
+            timerCount = timeOf.rest
+        case .pause:
+            timerCount = timeOf.pause
+        case .stop:
+            timerCount = timeOf.stop
+        case .interval:
+            timerCount = timeOf.interval
+        }
+
+     timerLabel.text = timeDisplay(timerCount)
+       
+        
+    }
+  
+    
+    func timerStateChange(_ status: timerStatus) {
+        var statusLabel = ""
+        var mainTaplLabel = ""
+        var subTapLabel = ""
+        var timerType = ""
+        var bgColor = UIColor()
+        var timeFont = UIFont()
+        
+        let color = colors()
+        let timerLabelSet = labelSet()
+   
+        
+        switch status {
+        case .preWorkout:
+            statusLabel = "Timer Starts in"
+            mainTaplLabel = timerLabelSet.blank
+            subTapLabel = timerLabelSet.blank
+            bgColor = color.preWorkoutBackground
+
+            timerOn()
+            
+            timerType = timerLabelSet.blank
+            timeFont = UIFont(name: "Jost*", size: 120.0)!
+        case .workoutStart:
+            statusLabel = timerLabelSet.blank
+            mainTaplLabel = "Tap to Pause Timer"
+            subTapLabel = timerLabelSet.blank
+            bgColor = color.workoutBackground
+            
+            print("workout")
+            timerOn()
+            timerType = timerLabelSet.workout
+            timeFont = UIFont(name: "Jost*", size: 85.0)!
+            
+        case .restStart:
+            statusLabel = timerLabelSet.blank
+            mainTaplLabel = "Tap to Pause Timer"
+            subTapLabel = timerLabelSet.blank
+            bgColor = color.restBackground
+            // UIColor 색상을 직접 부여할 때는 이와같이 사용한다.
+            print("rest")
+            timerOn()
+            timerType = timerLabelSet.rest
+            timeFont = UIFont(name: "Jost*", size: 85.0)!
+            
+        case .pause:
+            statusLabel = timerLabelSet.pause
+            mainTaplLabel = "Tap to Continue Timer"
+            subTapLabel = "Double Tap to Next Step"
+            bgColor = color.pauseBackground
+            if pauseState == timerStatus.workoutStart {
+                timerType = timerLabelSet.workout
+            } else if pauseState == timerStatus.restStart {
+                timerType = timerLabelSet.rest
+            } else {
+                timerType = timerLabelSet.blank
+            }
+            
+            timeFont = UIFont(name: "Jost*", size: 85.0)!
+            
+        case .stop:
+            statusLabel = timerLabelSet.blank
+            mainTaplLabel = "Tap to Start Timer"
+            subTapLabel = timerLabelSet.blank
+            bgColor = color.stopBackground
+      
+            timerType = timerLabelSet.blank
+            timeFont = UIFont(name: "Jost*", size: 85.0)!
+            
+        case .interval:
+            statusLabel = "Next Round Start in"
+            mainTaplLabel = "Double Tap to Skip"
+            subTapLabel = timerLabelSet.blank
+            bgColor = color.intervalBackground
+     
+            timerOn()
+            timerType = timerLabelSet.interval
+            timeFont = UIFont(name: "Jost*", size: 120.0)!
+            
+        }
+        
+        self.timerStatusLabel.text = statusLabel
+        self.timerMainLabel.text = mainTaplLabel
+        self.timerSubLabel.text = subTapLabel
+        self.timerTypeLabel.text = timerType
+        self.timerLabel.font = timeFont
+        self.timerMain.backgroundColor = bgColor
+        nextStateChage(status)
+        setRoundDisplay()
+    }
+    
+    func nextStateChage(_ nextStatus: timerStatus) {
+        var statusLabel = ""
+        var timerLabel = 0
+        let timerLabelOf = labelSet()
+        let timeOf = timeSet()
+        
+        switch nextStatus {
+        case .preWorkout:
+            statusLabel = timerLabelOf.workout
+            timerLabel = timeOf.workout
+        case .workoutStart:
+            statusLabel = timerLabelOf.rest
+            timerLabel = timeOf.rest
+        case .restStart:
+            if currentSet < totalSet {
+                statusLabel = timerLabelOf.workout
+                timerLabel = timeOf.workout
+  
+            } else {
+                statusLabel = timerLabelOf.interval
+                timerLabel = timeOf.interval
+            }
+
+        case .pause:
+            if pauseState == timerStatus.workoutStart {
+                statusLabel = timerLabelOf.rest
+                timerLabel = timeOf.rest
+            } else if pauseState == timerStatus.restStart {
+                statusLabel = timerLabelOf.interval
+                timerLabel = timeOf.interval
+            } else {
+                statusLabel = timerLabelOf.workout
+                timerLabel = timeOf.workout
+            }
+        case .interval:
+            statusLabel = timerLabelOf.workout
+            timerLabel = timeOf.workout
+        case .stop:
+            statusLabel = timerLabelOf.workout
+            timerLabel = timeOf.workout
+        }
+        
+        self.nextStateLabel.text = statusLabel
+        self.nextTimeLabel.text = String(format: "%02d:%02d", timerLabel/60, timerLabel%60)
+    }
+    
+  
+
+//MARK: - Realm DB
+  
+    func createDB(){
+        let timeLog = TimeLog()
+           timeLog.workoutTime = workoutTime
+           timeLog.restTime = restTime
+           timeLog.dateTime = Date()
+           timeLog.setCount = currentSet
+           timeLog.roundCount = currentRound
+        
+        delegate?.LogData(data: timeLog)
+    
+           do {
+               try realm.write{
+                realm.add(timeLog)
+               }
+           } catch {
+               print("ERRPORRRRRRR")
+           }
+       }
     @IBAction func deleteDB(_ sender: Any) {
         try! realm.write({
             realm.deleteAll()
         })
     }
-    @IBAction func onTimerEnd(_ sender: Any) {
-//        tmpTime = time
-//        btnSwitch()
-//        createDB()
-//        initTimer()
-        
-    }
-    
-    @objc func timerCallback() {
-        time += 5
-        timeLabel.text = timeDisplay(time)
-    }
-    
-    @objc func timerCountdown() {
-        if time > 0 {
-            time -= 5
-        } else {
-            
-        }
-        timeLabel.text = timeDisplay(time)
-    }
-    
-    func timeDisplay(_ number: Int) -> String {
-        return String(format: "%02d:%02d", number/60, number%60)
-    }
-    
-    func btnSwitch() {
-        if mTimer?.isValid ?? false {
-            mTimer?.invalidate()
-        }
-        timerStart.isEnabled = !timerStart.isEnabled
-        restStart.isEnabled = !restStart.isEnabled
-    }
-    func saveData() -> TimeLog {
-        let timeLog = TimeLog()
-        print(time)
-        timeLog.workoutTime = tmpTime ?? 0
-        timeLog.restTime = restTime - time
-        timeLog.dateTime = now
-        timeLog.setCount = setCount
-        
-        return timeLog
-    }
-    func createDB(){
 
-        
-        do {
-            try realm.write{
-                realm.add(saveData())
-            }
-        } catch {
-            print("ERRPORRRRRRR")
-        }
-        setCount += 1
-        setCountLabel.text = "\(setCount) 세트"
-    }
-    func initTimer() {
-        
-        if !timerStart.isEnabled {
-            time = 0
-        } else {
-            time = restTime
-        }
-        
-//        timerStart.isEnabled ? time = 0 : time = restTime
-    }
-}
-
-extension TimerVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return restTimes.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-          
-        return String(restTimes[row])
-        // PickerView내 특정 위치(row)선택 시 그위치에 해당하는 문자열 반환 메서드
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        restTimeSetting.text = "휴식시간: \(restTimes[row])"
-        restTime = restTimes[row] * restTime
-      
-    }
-    
-    func createPickerView() {
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        restTimeSetting.inputView = pickerView
-        
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissPickerView))
-        toolBar.setItems([doneBtn], animated: true)
-        toolBar.isUserInteractionEnabled = true
-        
-        restTimeSetting.inputAccessoryView = toolBar
-    }
-    @objc func dismissPickerView() {
-        self.view.endEditing(true)
-        
-    }
+   
 }

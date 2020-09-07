@@ -6,6 +6,7 @@ target 'Health' do
   use_frameworks!
 	pod 'RealmSwift'
   pod 'Charts'
+  pod 'Tabman', '~> 2.9'
   # Pods for Health
 
 end

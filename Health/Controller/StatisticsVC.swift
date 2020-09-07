@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import Charts
 
-class TotalLogVC: UIViewController, IValueFormatter{
+class StatisticsVC: UIViewController, IValueFormatter{
      
     let realm = try! Realm()
     
@@ -40,6 +40,12 @@ class TotalLogVC: UIViewController, IValueFormatter{
         createPickerView()
         workoutChart(dateFormatter.string(from: Date()))
         
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isMovingFromParent {
+            print("moving to parent")
+        }
     }
 
     func workoutChart(_ selectedDate: String) {
@@ -101,7 +107,7 @@ class TotalLogVC: UIViewController, IValueFormatter{
     }
 }
 
-extension TotalLogVC: UIPickerViewDelegate, UIPickerViewDataSource {
+extension StatisticsVC: UIPickerViewDelegate, UIPickerViewDataSource {
  
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

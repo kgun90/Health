@@ -12,14 +12,20 @@ import RealmSwift
 class LogTableController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var topView: UIView!
     let realm = try! Realm()
     var resultTimeLog: Array<TimeLog>?
     let yesterday = Date()
+    let timerAsset = TimerAssets()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         loadData()
@@ -36,24 +42,64 @@ class LogTableController: UIViewController {
 }
 
 extension LogTableController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return resultTimeLog?.count ?? 0
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+      
+        var st = ""
+        switch section {
+        case 0:
+           st = "ST"
+        case 1:
+            st = "ND"
+        case 2:
+            st = "RD"
+        default:
+            st = "TH"
+        }
+
+        return "\(section+1)" + st + " Round"
+    }
+
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.textAlignment = .left
+        
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return resultTimeLog?.last?.roundCount ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let filteredLog = resultTimeLog?.filter {
+              $0.roundCount == section + 1
+        }
+        
+        return filteredLog?.count ?? 0
+    }
+
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LogTableCell", for: indexPath) as! LogTableCell
+        let filteredLog = resultTimeLog?.filter { $0.roundCount == indexPath.section + 1 }
+                
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss"
-        let workoutTime = resultTimeLog?[indexPath.row].workoutTime ?? 0
-        let restTime = resultTimeLog?[indexPath.row].restTime ?? 0
+        let workoutTime = filteredLog?[indexPath.row].workoutTime ?? 0
+        let restTime = filteredLog?[indexPath.row].restTime ?? 0
         
-        cell.logNumber.text = String(indexPath.row + 1)
-        cell.workoutTime.text = String(format: "운동: %02d:%02d", workoutTime/60, workoutTime%60)
-        cell.restTime.text = String(format: "휴식: %02d:%02d", restTime/60, restTime%60)
-        cell.logTime.text = dateFormatter.string(from: resultTimeLog?[indexPath.row].dateTime ?? Date())
+
+        cell.logNumber.text = String(filteredLog?[indexPath.row].setCount ?? 0)
+        cell.workoutTime.text = String(format: "%02d:%02d", workoutTime/60, workoutTime%60)
+        cell.restTime.text = String(format: "%02d:%02d", restTime/60, restTime%60)
+        cell.logTime.text = dateFormatter.string(from: filteredLog?[indexPath.row].dateTime ?? Date())
+
         
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 25
+    }
     
 }

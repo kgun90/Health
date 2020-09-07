@@ -1,0 +1,144 @@
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "05i-9x-b4M"; */
+"05i-9x-b4M.title" = " ";
+
+/* Class = "UILabel"; text = "Timer"; ObjectID = "1be-tc-WP7"; */
+"1be-tc-WP7.text" = "Timer";
+
+/* Class = "UILabel"; text = "Count Up"; ObjectID = "2uU-UN-z3x"; */
+"2uU-UN-z3x.text" = "Count Up";
+
+/* Class = "UILabel"; text = "Timer Settings"; ObjectID = "58L-e4-eZm"; */
+"58L-e4-eZm.text" = "Timer Settings";
+
+/* Class = "UILabel"; text = "Workout Time"; ObjectID = "6pv-FI-3Fh"; */
+"6pv-FI-3Fh.text" = "Workout Time";
+
+/* Class = "UILabel"; text = "Set Interval"; ObjectID = "83H-j4-1jg"; */
+"83H-j4-1jg.text" = "Set Interval";
+
+/* Class = "UITextField"; placeholder = "Choose Date"; ObjectID = "9di-MW-95v"; */
+"9di-MW-95v.placeholder" = "Choose Date";
+
+/* Class = "UILabel"; text = "Workout Timer Type"; ObjectID = "AgR-ik-8EG"; */
+"AgR-ik-8EG.text" = "Workout Timer Type";
+
+/* Class = "UIButton"; normalTitle = "Bedtime"; ObjectID = "B27-Xw-mQG"; */
+"B27-Xw-mQG.normalTitle" = "Bedtime";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "BQk-Ec-9ae"; */
+"BQk-Ec-9ae.text" = "00:00";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "BWm-cc-Rgj"; */
+"BWm-cc-Rgj.title" = " ";
+
+/* Class = "UILabel"; text = "Rest"; ObjectID = "CLY-SP-Uz3"; */
+"CLY-SP-Uz3.text" = "Rest";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "Gq3-ti-ial"; */
+"Gq3-ti-ial.text" = "5";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "ITm-fV-06s"; */
+"ITm-fV-06s.text" = "5";
+
+/* Class = "UILabel"; text = "01:00"; ObjectID = "K0a-NW-APX"; */
+"K0a-NW-APX.text" = "01:00";
+
+/* Class = "UILabel"; text = "restTime"; ObjectID = "LOQ-mo-SeO"; */
+"LOQ-mo-SeO.text" = "restTime";
+
+/* Class = "UILabel"; text = "Bedtime"; ObjectID = "Q08-pE-vJO"; */
+"Q08-pE-vJO.text" = "Bedtime";
+
+/* Class = "UILabel"; text = "Set"; ObjectID = "SL2-wD-jeb"; */
+"SL2-wD-jeb.text" = "Set";
+
+/* Class = "UIButton"; normalTitle = "Timer"; ObjectID = "SQt-F7-7FO"; */
+"SQt-F7-7FO.normalTitle" = "Timer";
+
+/* Class = "UILabel"; text = "Estimate Time"; ObjectID = "SYU-gu-UyC"; */
+"SYU-gu-UyC.text" = "Estimate Time";
+
+/* Class = "UITextField"; placeholder = "Select Time"; ObjectID = "U0Q-Jw-z2C"; */
+"U0Q-Jw-z2C.placeholder" = "Select Time";
+
+/* Class = "UILabel"; text = "Calculate optimal bedtime for best sleep quality"; ObjectID = "WVV-I0-SFR"; */
+"WVV-I0-SFR.text" = "Calculate optimal bedtime for best sleep quality";
+
+/* Class = "UILabel"; text = "Rest Time"; ObjectID = "WgX-mh-vpA"; */
+"WgX-mh-vpA.text" = "Rest Time";
+
+/* Class = "UILabel"; text = "We recommend the time below for best sleep quality"; ObjectID = "aJz-e8-pWp"; */
+"aJz-e8-pWp.text" = "We recommend the time below for best sleep quality";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "aXb-vq-40n"; */
+"aXb-vq-40n.text" = "00:00";
+
+/* Class = "UILabel"; text = "Round Interval"; ObjectID = "adz-Fv-kAn"; */
+"adz-Fv-kAn.text" = "Round Interval";
+
+/* Class = "UILabel"; text = "*For accurate recording, Select count up."; ObjectID = "aqg-pt-vH4"; */
+"aqg-pt-vH4.text" = "*For accurate recording, Select count up.";
+
+/* Class = "UIButton"; normalTitle = "DeleteDB"; ObjectID = "dYM-Ww-rwz"; */
+"dYM-Ww-rwz.normalTitle" = "DeleteDB";
+
+/* Class = "UIButton"; normalTitle = "Statistics"; ObjectID = "dfK-52-9Tp"; */
+"dfK-52-9Tp.normalTitle" = "Statistics";
+
+/* Class = "UILabel"; text = "Log"; ObjectID = "fNm-o2-5b6"; */
+"fNm-o2-5b6.text" = "Log";
+
+/* Class = "UILabel"; text = "1 SET"; ObjectID = "gUj-yg-Ast"; */
+"gUj-yg-Ast.text" = "1 SET";
+
+/* Class = "UITextField"; text = "3 min"; ObjectID = "hQr-xR-HcS"; */
+"hQr-xR-HcS.text" = "3 min";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "kfU-Z4-q7u"; */
+"kfU-Z4-q7u.text" = "00:00";
+
+/* Class = "UITextField"; text = "10 sec"; ObjectID = "nD1-DF-Lr6"; */
+"nD1-DF-Lr6.text" = "10 sec";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "nkY-d9-vD5"; */
+"nkY-d9-vD5.title" = " ";
+
+/* Class = "UITextField"; text = "1 min"; ObjectID = "qPP-J2-7mL"; */
+"qPP-J2-7mL.text" = "1 min";
+
+/* Class = "UILabel"; text = "125"; ObjectID = "rxs-e0-1eU"; */
+"rxs-e0-1eU.text" = "125";
+
+/* Class = "UILabel"; text = "workoutTime"; ObjectID = "sPL-1D-Hfm"; */
+"sPL-1D-Hfm.text" = "workoutTime";
+
+/* Class = "UILabel"; text = "Selecte the time you want wake up "; ObjectID = "sSD-h0-4f2"; */
+"sSD-h0-4f2.text" = "Selecte the time you want wake up ";
+
+/* Class = "UILabel"; text = "Workout"; ObjectID = "u0b-z8-oT1"; */
+"u0b-z8-oT1.text" = "Workout";
+
+/* Class = "UITextField"; text = "3 sec"; ObjectID = "vy6-kw-lrW"; */
+"vy6-kw-lrW.text" = "3 sec";
+
+/* Class = "UILabel"; text = "LogTime"; ObjectID = "x9w-3X-xk0"; */
+"x9w-3X-xk0.text" = "LogTime";
+
+/* Class = "UILabel"; text = " Tap to start timer"; ObjectID = "xse-7x-Yue"; */
+"xse-7x-Yue.text" = " Tap to start timer";
+
+/* Class = "UILabel"; text = "Workout"; ObjectID = "yt4-yb-uD2"; */
+"yt4-yb-uD2.text" = "Workout";
+
+/* Class = "UILabel"; text = "Next"; ObjectID = "yvT-76-8rd"; */
+"yvT-76-8rd.text" = "Next";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "zAy-ll-ffW"; */
+"zAy-ll-ffW.text" = "00:00";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "zPX-u7-Ujj"; */
+"zPX-u7-Ujj.text" = "00:00";
+
+/* Class = "UILabel"; text = "Round"; ObjectID = "zqi-Lh-h3T"; */
+"zqi-Lh-h3T.text" = "Round";

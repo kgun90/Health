@@ -8,29 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		0E0739AFA6E7D524019C696C /* Pods_Health.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18A90170AC8037FB324B974 /* Pods_Health.framework */; };
+		3D221A3424FB82A0009D03C5 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D221A3224FB82A0009D03C5 /* MyTableViewCell.swift */; };
+		3D221A3524FB82A0009D03C5 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D221A3324FB82A0009D03C5 /* MyTableViewCell.xib */; };
 		3D3FC84E24C8515F0010EAC3 /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC84D24C8515F0010EAC3 /* TimerVC.swift */; };
 		3D3FC85024C9C49A0010EAC3 /* ScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC84F24C9C49A0010EAC3 /* ScrollVC.swift */; };
 		3D3FC85224C9D2280010EAC3 /* TimeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85124C9D2280010EAC3 /* TimeLog.swift */; };
 		3D3FC85424CB0EE60010EAC3 /* LogTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85324CB0EE60010EAC3 /* LogTableController.swift */; };
 		3D3FC85624CB275B0010EAC3 /* LogTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85524CB275B0010EAC3 /* LogTableCell.swift */; };
-		3D3FC85924CC11510010EAC3 /* TotalLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85824CC11510010EAC3 /* TotalLogVC.swift */; };
+		3D3FC85924CC11510010EAC3 /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85824CC11510010EAC3 /* StatisticsVC.swift */; };
 		3D3FC85B24D15CAB0010EAC3 /* BedtimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85A24D15CAB0010EAC3 /* BedtimeVC.swift */; };
+		3D544D9E24FFE39F0082C775 /* TabScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D544D9D24FFE39F0082C775 /* TabScrollVC.swift */; };
+		3D544DA02500E0D00082C775 /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D544D9F2500E0D00082C775 /* LogVC.swift */; };
+		3D544DAC2504B3750082C775 /* workout_icon_ver_0.8.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D544DAB2504B3750082C775 /* workout_icon_ver_0.8.png */; };
+		3D7C2F9D24E1B60A0058A71D /* TimerSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C2F9C24E1B60A0058A71D /* TimerSettingVC.swift */; };
 		3D89535624C6C785002612C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D89535524C6C785002612C4 /* AppDelegate.swift */; };
 		3D89535824C6C785002612C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D89535724C6C785002612C4 /* SceneDelegate.swift */; };
 		3D89535A24C6C785002612C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D89535924C6C785002612C4 /* ViewController.swift */; };
 		3D89535D24C6C785002612C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D89535B24C6C785002612C4 /* Main.storyboard */; };
 		3D89535F24C6C790002612C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D89535E24C6C790002612C4 /* Assets.xcassets */; };
 		3D89536224C6C790002612C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D89536024C6C790002612C4 /* LaunchScreen.storyboard */; };
+		3DA5C1F324EE4712001AB03D /* TimerAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5C1F224EE4712001AB03D /* TimerAssets.swift */; };
+		3DA5C1F724F36DB1001AB03D /* Jost-500-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DA5C1F424F36D51001AB03D /* Jost-500-Medium.otf */; };
+		3DA5C1F824F36DB4001AB03D /* Jost-400-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DA5C1F524F36D8F001AB03D /* Jost-400-Book.otf */; };
+		3DA5C1F924F36DB6001AB03D /* Jost-300-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DA5C1F624F36D8F001AB03D /* Jost-300-Light.otf */; };
+		3DFFC42A24E4F76300E54C11 /* ExtensionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFC42924E4F76300E54C11 /* ExtensionTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D221A3224FB82A0009D03C5 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		3D221A3324FB82A0009D03C5 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		3D3FC84D24C8515F0010EAC3 /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
 		3D3FC84F24C9C49A0010EAC3 /* ScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollVC.swift; sourceTree = "<group>"; };
 		3D3FC85124C9D2280010EAC3 /* TimeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLog.swift; sourceTree = "<group>"; };
 		3D3FC85324CB0EE60010EAC3 /* LogTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableController.swift; sourceTree = "<group>"; };
 		3D3FC85524CB275B0010EAC3 /* LogTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableCell.swift; sourceTree = "<group>"; };
-		3D3FC85824CC11510010EAC3 /* TotalLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalLogVC.swift; sourceTree = "<group>"; };
+		3D3FC85824CC11510010EAC3 /* StatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
 		3D3FC85A24D15CAB0010EAC3 /* BedtimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedtimeVC.swift; sourceTree = "<group>"; };
+		3D544D9D24FFE39F0082C775 /* TabScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScrollVC.swift; sourceTree = "<group>"; };
+		3D544D9F2500E0D00082C775 /* LogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
+		3D544DAB2504B3750082C775 /* workout_icon_ver_0.8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = workout_icon_ver_0.8.png; sourceTree = "<group>"; };
+		3D7C2F9C24E1B60A0058A71D /* TimerSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingVC.swift; sourceTree = "<group>"; };
 		3D89535224C6C785002612C4 /* Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D89535524C6C785002612C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D89535724C6C785002612C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +56,13 @@
 		3D89535E24C6C790002612C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D89536124C6C790002612C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D89536324C6C790002612C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DA5C1F224EE4712001AB03D /* TimerAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAssets.swift; sourceTree = "<group>"; };
+		3DA5C1F424F36D51001AB03D /* Jost-500-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-500-Medium.otf"; sourceTree = "<group>"; };
+		3DA5C1F524F36D8F001AB03D /* Jost-400-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-400-Book.otf"; sourceTree = "<group>"; };
+		3DA5C1F624F36D8F001AB03D /* Jost-300-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-300-Light.otf"; sourceTree = "<group>"; };
+		3DFFC42924E4F76300E54C11 /* ExtensionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTextField.swift; sourceTree = "<group>"; };
+		3DFFC42B24E7EDB900E54C11 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		3DFFC42C24E7EDBA00E54C11 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3FFE2B3CFD4FED62E2FF858B /* Pods-Health.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Health.release.xcconfig"; path = "Target Support Files/Pods-Health/Pods-Health.release.xcconfig"; sourceTree = "<group>"; };
 		B18A90170AC8037FB324B974 /* Pods_Health.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Health.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BA7E3BD5996C1CB814E9C2 /* Pods-Health.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Health.debug.xcconfig"; path = "Target Support Files/Pods-Health/Pods-Health.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,12 +101,16 @@
 		3D89535424C6C785002612C4 /* Health */ = {
 			isa = PBXGroup;
 			children = (
+				3DA5C1F624F36D8F001AB03D /* Jost-300-Light.otf */,
+				3DA5C1F524F36D8F001AB03D /* Jost-400-Book.otf */,
+				3DA5C1F424F36D51001AB03D /* Jost-500-Medium.otf */,
 				3D89536924C6CA12002612C4 /* Model */,
 				3D89536B24C6CA23002612C4 /* Controller */,
 				3D89536A24C6CA1A002612C4 /* View */,
 				3D89535524C6C785002612C4 /* AppDelegate.swift */,
 				3D89535724C6C785002612C4 /* SceneDelegate.swift */,
 				3D89535E24C6C790002612C4 /* Assets.xcassets */,
+				3D544DAB2504B3750082C775 /* workout_icon_ver_0.8.png */,
 				3D89536024C6C790002612C4 /* LaunchScreen.storyboard */,
 				3D89536324C6C790002612C4 /* Info.plist */,
 			);
@@ -92,6 +120,9 @@
 		3D89536924C6CA12002612C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3DA5C1F224EE4712001AB03D /* TimerAssets.swift */,
+				3D3FC85124C9D2280010EAC3 /* TimeLog.swift */,
+				3D3FC85524CB275B0010EAC3 /* LogTableCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				3D89535B24C6C785002612C4 /* Main.storyboard */,
+				3D221A3224FB82A0009D03C5 /* MyTableViewCell.swift */,
+				3D221A3324FB82A0009D03C5 /* MyTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,13 +141,15 @@
 			isa = PBXGroup;
 			children = (
 				3D89535924C6C785002612C4 /* ViewController.swift */,
-				3D3FC84D24C8515F0010EAC3 /* TimerVC.swift */,
 				3D3FC84F24C9C49A0010EAC3 /* ScrollVC.swift */,
-				3D3FC85124C9D2280010EAC3 /* TimeLog.swift */,
+				3D3FC84D24C8515F0010EAC3 /* TimerVC.swift */,
+				3D544D9F2500E0D00082C775 /* LogVC.swift */,
+				3D7C2F9C24E1B60A0058A71D /* TimerSettingVC.swift */,
 				3D3FC85324CB0EE60010EAC3 /* LogTableController.swift */,
-				3D3FC85524CB275B0010EAC3 /* LogTableCell.swift */,
-				3D3FC85824CC11510010EAC3 /* TotalLogVC.swift */,
+				3D3FC85824CC11510010EAC3 /* StatisticsVC.swift */,
 				3D3FC85A24D15CAB0010EAC3 /* BedtimeVC.swift */,
+				3DFFC42924E4F76300E54C11 /* ExtensionTextField.swift */,
+				3D544D9D24FFE39F0082C775 /* TabScrollVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +215,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 3D89534924C6C785002612C4;
 			productRefGroup = 3D89535324C6C785002612C4 /* Products */;
@@ -196,9 +232,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DA5C1F924F36DB6001AB03D /* Jost-300-Light.otf in Resources */,
 				3D89536224C6C790002612C4 /* LaunchScreen.storyboard in Resources */,
 				3D89535F24C6C790002612C4 /* Assets.xcassets in Resources */,
+				3DA5C1F724F36DB1001AB03D /* Jost-500-Medium.otf in Resources */,
 				3D89535D24C6C785002612C4 /* Main.storyboard in Resources */,
+				3D221A3524FB82A0009D03C5 /* MyTableViewCell.xib in Resources */,
+				3DA5C1F824F36DB4001AB03D /* Jost-400-Book.otf in Resources */,
+				3D544DAC2504B3750082C775 /* workout_icon_ver_0.8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,15 +293,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3FC84E24C8515F0010EAC3 /* TimerVC.swift in Sources */,
+				3DA5C1F324EE4712001AB03D /* TimerAssets.swift in Sources */,
+				3DFFC42A24E4F76300E54C11 /* ExtensionTextField.swift in Sources */,
 				3D3FC85024C9C49A0010EAC3 /* ScrollVC.swift in Sources */,
-				3D3FC85924CC11510010EAC3 /* TotalLogVC.swift in Sources */,
+				3D3FC85924CC11510010EAC3 /* StatisticsVC.swift in Sources */,
 				3D89535A24C6C785002612C4 /* ViewController.swift in Sources */,
 				3D89535624C6C785002612C4 /* AppDelegate.swift in Sources */,
+				3D544DA02500E0D00082C775 /* LogVC.swift in Sources */,
+				3D221A3424FB82A0009D03C5 /* MyTableViewCell.swift in Sources */,
 				3D3FC85B24D15CAB0010EAC3 /* BedtimeVC.swift in Sources */,
 				3D89535824C6C785002612C4 /* SceneDelegate.swift in Sources */,
 				3D3FC85424CB0EE60010EAC3 /* LogTableController.swift in Sources */,
 				3D3FC85224C9D2280010EAC3 /* TimeLog.swift in Sources */,
 				3D3FC85624CB275B0010EAC3 /* LogTableCell.swift in Sources */,
+				3D7C2F9D24E1B60A0058A71D /* TimerSettingVC.swift in Sources */,
+				3D544D9E24FFE39F0082C775 /* TabScrollVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +318,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3D89535C24C6C785002612C4 /* Base */,
+				3DFFC42B24E7EDB900E54C11 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -279,6 +327,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3D89536124C6C790002612C4 /* Base */,
+				3DFFC42C24E7EDBA00E54C11 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -290,6 +339,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -350,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

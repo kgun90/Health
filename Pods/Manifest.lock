@@ -2,27 +2,35 @@ PODS:
   - Charts (3.5.0):
     - Charts/Core (= 3.5.0)
   - Charts/Core (3.5.0)
+  - Pageboy (3.6.1)
   - Realm (5.0.0):
     - Realm/Headers (= 5.0.0)
   - Realm/Headers (5.0.0)
   - RealmSwift (5.0.0):
     - Realm (= 5.0.0)
+  - Tabman (2.9.1):
+    - Pageboy (~> 3.6.0)
 
 DEPENDENCIES:
   - Charts
   - RealmSwift
+  - Tabman (~> 2.9)
 
 SPEC REPOS:
   trunk:
     - Charts
+    - Pageboy
     - Realm
     - RealmSwift
+    - Tabman
 
 SPEC CHECKSUMS:
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
+  Pageboy: 29a2d474ad99404b4d77f325e0ab6d705930a4fb
   Realm: 76066d333de26f97e9caedaa85ee3ff4a62ca265
   RealmSwift: c1bdff09b422569dc6881410d9ccf712bcdb79b0
+  Tabman: 085d89c65be9e883629bdaf5b1453a6397e57846
 
-PODFILE CHECKSUM: 6a3bd3ef130c5743962e791f5f005ae32399689e
+PODFILE CHECKSUM: d99f7283d9e4adc1fc461d5ac8aa12e458a4d336
 
 COCOAPODS: 1.9.2
