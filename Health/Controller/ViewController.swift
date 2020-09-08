@@ -18,10 +18,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setNavigationBar()
+       
         menuButtons.forEach { $0.layer.cornerRadius = 8}
       
 
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+         self.setNavigationBar()
     }
     func setNavigationBar() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -29,9 +34,13 @@ class ViewController: UIViewController {
         self.navigationController?.hidesBarsOnSwipe = false
         // 위로 스와이프 동작시 네비게이션 버튼이 위로 올라가는것을 해제함
         let bar: UINavigationBar! = self.navigationController?.navigationBar
+        let height: CGFloat = 156
+        let bounds = bar.bounds
+        
         bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         bar.shadowImage = UIImage()
-        bar.backgroundColor = UIColor.clear
+        bar.backgroundColor = UIColor.red
+        bar.frame = CGRect(x: 0, y: 0, width: bounds.height, height: bounds.height + height)
         // navigation bar color를 투명하게 만듬
                 
     }

@@ -52,7 +52,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3wC-bB-aYa" kind="show" id="hYf-xh-JHY"/>
+                                    <segue destination="0ui-EL-UEZ" kind="show" id="hFf-JG-Bs7"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chart.bar.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qxg-Cu-2YX">
@@ -618,134 +618,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11f-ws-xAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2778.4000000000001" y="-563.79310344827593"/>
+            <point key="canvasLocation" x="2788" y="-563"/>
         </scene>
-        <!--Log Table Controller-->
-        <scene sceneID="PyN-EG-MAI">
-            <objects>
-                <viewController id="Li9-ut-61O" customClass="LogTableController" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V0k-yj-XOL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwc-bU-zEt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNm-o2-5b6">
-                                        <rect key="frame" x="24" y="78" width="65.333333333333329" height="58"/>
-                                        <fontDescription key="fontDescription" name="Jost-Medium" family="Jost*" pointSize="40"/>
-                                        <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="156" id="4wY-e0-7N2"/>
-                                    <constraint firstAttribute="width" constant="375" id="fPt-cr-gNN"/>
-                                    <constraint firstAttribute="bottom" secondItem="fNm-o2-5b6" secondAttribute="bottom" constant="20" id="m9L-LJ-Avx"/>
-                                    <constraint firstItem="fNm-o2-5b6" firstAttribute="leading" secondItem="zwc-bU-zEt" secondAttribute="leading" constant="24" id="q2R-CQ-dNj"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rV8-5X-tfz">
-                                <rect key="frame" x="16" y="156" width="343" height="622"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogTableCell" rowHeight="36" id="jWo-Zo-IfU" customClass="LogTableCell" customModule="Health" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="55.333332061767578" width="313" height="36"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jWo-Zo-IfU" id="cW2-bH-jEx">
-                                            <rect key="frame" x="0.0" y="0.0" width="313" height="36"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxs-e0-1eU">
-                                                    <rect key="frame" x="0.0" y="5.6666666666666661" width="7.666666666666667" height="24.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9w-3X-xk0">
-                                                    <rect key="frame" x="241.33333333333334" y="5.6666666666666661" width="71.666666666666657" height="24.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPL-1D-Hfm">
-                                                    <rect key="frame" x="81.666666666666671" y="5.6666666666666679" width="50.000000000000014" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="25" id="18D-ww-dIR"/>
-                                                        <constraint firstAttribute="width" constant="50" id="3BA-zf-hNd"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOQ-mo-SeO">
-                                                    <rect key="frame" x="161.66666666666666" y="5.6666666666666679" width="50" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="FrM-mC-hjJ"/>
-                                                        <constraint firstAttribute="height" constant="25" id="cnU-Cg-ab2"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="rxs-e0-1eU" firstAttribute="centerY" secondItem="cW2-bH-jEx" secondAttribute="centerY" id="Fgb-V6-T25"/>
-                                                <constraint firstItem="rxs-e0-1eU" firstAttribute="leading" secondItem="cW2-bH-jEx" secondAttribute="leading" id="NFF-rB-j9s"/>
-                                                <constraint firstAttribute="trailing" secondItem="x9w-3X-xk0" secondAttribute="trailing" id="TRV-wB-XPf"/>
-                                                <constraint firstItem="LOQ-mo-SeO" firstAttribute="centerY" secondItem="cW2-bH-jEx" secondAttribute="centerY" id="YuD-CS-cTk"/>
-                                                <constraint firstItem="x9w-3X-xk0" firstAttribute="centerY" secondItem="cW2-bH-jEx" secondAttribute="centerY" id="gfp-RH-8kf"/>
-                                                <constraint firstItem="sPL-1D-Hfm" firstAttribute="centerX" secondItem="cW2-bH-jEx" secondAttribute="centerX" constant="-50" id="oEZ-er-nSN"/>
-                                                <constraint firstItem="sPL-1D-Hfm" firstAttribute="centerY" secondItem="cW2-bH-jEx" secondAttribute="centerY" id="xaB-mz-yrQ"/>
-                                                <constraint firstItem="LOQ-mo-SeO" firstAttribute="centerX" secondItem="cW2-bH-jEx" secondAttribute="centerX" constant="30" id="xkq-IC-Zvr"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="logNumber" destination="rxs-e0-1eU" id="rFT-eD-OtY"/>
-                                            <outlet property="logTime" destination="x9w-3X-xk0" id="bKh-vb-fz3"/>
-                                            <outlet property="restTime" destination="LOQ-mo-SeO" id="RIp-ee-rAi"/>
-                                            <outlet property="workoutTime" destination="sPL-1D-Hfm" id="84Y-7L-YVk"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="rV8-5X-tfz" firstAttribute="leading" secondItem="hVc-Vg-IeS" secondAttribute="leading" constant="16" id="3fk-sN-2oG"/>
-                            <constraint firstItem="rV8-5X-tfz" firstAttribute="top" secondItem="zwc-bU-zEt" secondAttribute="bottom" id="50N-FX-Btk"/>
-                            <constraint firstAttribute="bottom" secondItem="rV8-5X-tfz" secondAttribute="bottom" constant="34" id="GhW-9g-54U"/>
-                            <constraint firstItem="zwc-bU-zEt" firstAttribute="centerX" secondItem="V0k-yj-XOL" secondAttribute="centerX" id="L01-l4-r4w"/>
-                            <constraint firstItem="rV8-5X-tfz" firstAttribute="centerX" secondItem="V0k-yj-XOL" secondAttribute="centerX" id="QUE-Qe-qbL"/>
-                            <constraint firstItem="zwc-bU-zEt" firstAttribute="top" secondItem="V0k-yj-XOL" secondAttribute="top" id="Y4d-PY-tEg"/>
-                            <constraint firstItem="hVc-Vg-IeS" firstAttribute="trailing" secondItem="rV8-5X-tfz" secondAttribute="trailing" constant="16" id="mbq-Ng-VP4"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="hVc-Vg-IeS"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="rV8-5X-tfz" id="StQ-VA-uYY"/>
-                        <outlet property="topView" destination="zwc-bU-zEt" id="2Eh-Zm-fLE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLM-5P-nSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4614" y="-563"/>
-        </scene>
-        <!--StatisticsVC-->
+        <!--StatsVC-->
         <scene sceneID="4tA-TU-nWn">
             <objects>
-                <viewController id="3wC-bB-aYa" customClass="StatisticsVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StatsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3wC-bB-aYa" customClass="StatsVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5hj-go-iEh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECJ-92-GiA" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="142" width="335" height="616"/>
+                                <rect key="frame" x="20" y="98" width="335" height="660"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9di-MW-95v">
-                                <rect key="frame" x="100" y="98" width="175" height="34"/>
+                                <rect key="frame" x="100" y="54" width="175" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -773,7 +661,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcX-ps-3Gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1925" y="78"/>
+            <point key="canvasLocation" x="3588" y="92"/>
+        </scene>
+        <!--StatisticsVC-->
+        <scene sceneID="UBc-jy-aVN">
+            <objects>
+                <viewController id="0ui-EL-UEZ" customClass="StatisticsVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mMk-yn-loX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="FrE-Oz-Gqx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ExY-S3-dXk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZHV-vq-pGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="92"/>
         </scene>
         <!--Tab ScrollVC-->
         <scene sceneID="Mcq-4v-aaJ">
@@ -808,22 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVw-Me-Z7c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="-1266"/>
-        </scene>
-        <!--ScrollVC-->
-        <scene sceneID="HHd-r4-Aen">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Wwi-ja-GmL" customClass="ScrollVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="aM0-gC-7JD">
-                        <barButtonItem key="backBarButtonItem" title=" " id="nkY-d9-vD5"/>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="Lc7-lO-a0J" kind="show" identifier="showTimerSettingVC" id="28L-vq-c4f"/>
-                    </connections>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lpy-1o-RbG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1925" y="-563"/>
+            <point key="canvasLocation" x="1924" y="-563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I6t-wn-0MQ">
@@ -1001,7 +890,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caa-AX-1Ol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="766.99507389162568"/>
+            <point key="canvasLocation" x="1924" y="899"/>
         </scene>
         <!--LogVC-->
         <scene sceneID="MKM-iL-8p9">
@@ -1017,12 +906,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xz-MI-lmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3604" y="-564"/>
+            <point key="canvasLocation" x="3588" y="-563"/>
+        </scene>
+        <!--RecordVC-->
+        <scene sceneID="Rc2-sm-xSP">
+            <objects>
+                <viewController storyboardIdentifier="RecordVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lfm-cC-aCb" customClass="RecordVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uq8-Pe-z9m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="NrX-R8-WnE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3FC-fy-Wk2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2788" y="92"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="WjO-0U-q2s"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="bed.double.fill" catalog="system" width="128" height="80"/>

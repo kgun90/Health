@@ -25,9 +25,12 @@ class TabScrollVC: TabmanViewController {
         viewControllers.append(logVC)
         
         self.dataSource = self
+        
         (viewControllers[0] as! TimerVC).delegate = viewControllers[1].self as? TimerDataDelegate
-
+        // LogVC에서 작성 된 delegate를 TimerVC에서 데이터를 전달 받고, Delegate를 부여함
+        
         paddingView.layer.cornerRadius = 12.0
+        
         let bar = TMBar.LineBar()
      
         bar.indicator.cornerStyle = .rounded
@@ -36,8 +39,8 @@ class TabScrollVC: TabmanViewController {
         bar.backgroundColor = UIColor(red: 69/255, green: 79/255, blue: 99/255, alpha: 1.0)
         bar.indicator.weight = .custom(value: 6.0)
     
-
         addBar(bar, dataSource: self, at: .custom(view: paddingView, layout: nil))
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         let gearButton = UIBarButtonItem(image: settingImage, style: .plain, target: self, action: #selector(gearButtonAction))
         // action 을 통해 버튼 동작시 실행 함수를 부여함

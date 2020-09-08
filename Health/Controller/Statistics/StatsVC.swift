@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import Charts
 
-class StatisticsVC: UIViewController, IValueFormatter{
+class StatsVC: UIViewController, IValueFormatter{
      
     let realm = try! Realm()
     
@@ -69,7 +69,7 @@ class StatisticsVC: UIViewController, IValueFormatter{
         let chartData = BarChartData()
         
         workoutDataSet.stackLabels = ["workout", "rest"]
-        workoutDataSet.valueFont = UIFont(name: "Futura", size: 15.0)!
+        workoutDataSet.valueFont = UIFont(name: "Jost*", size: 15.0)!
         workoutDataSet.colors = [NSUIColor.blue, NSUIColor.systemPink]
         workoutDataSet.valueFormatter = self
         
@@ -107,7 +107,7 @@ class StatisticsVC: UIViewController, IValueFormatter{
     }
 }
 
-extension StatisticsVC: UIPickerViewDelegate, UIPickerViewDataSource {
+extension StatsVC: UIPickerViewDelegate, UIPickerViewDataSource {
  
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
