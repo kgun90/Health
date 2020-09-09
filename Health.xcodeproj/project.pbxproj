@@ -12,7 +12,6 @@
 		3D221A3524FB82A0009D03C5 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D221A3324FB82A0009D03C5 /* MyTableViewCell.xib */; };
 		3D3FC84E24C8515F0010EAC3 /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC84D24C8515F0010EAC3 /* TimerVC.swift */; };
 		3D3FC85224C9D2280010EAC3 /* TimeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85124C9D2280010EAC3 /* TimeLog.swift */; };
-		3D3FC85624CB275B0010EAC3 /* LogTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85524CB275B0010EAC3 /* LogTableCell.swift */; };
 		3D3FC85924CC11510010EAC3 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85824CC11510010EAC3 /* StatsVC.swift */; };
 		3D3FC85B24D15CAB0010EAC3 /* BedtimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85A24D15CAB0010EAC3 /* BedtimeVC.swift */; };
 		3D544D9E24FFE39F0082C775 /* TabScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D544D9D24FFE39F0082C775 /* TabScrollVC.swift */; };
@@ -41,7 +40,6 @@
 		3D221A3324FB82A0009D03C5 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		3D3FC84D24C8515F0010EAC3 /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
 		3D3FC85124C9D2280010EAC3 /* TimeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLog.swift; sourceTree = "<group>"; };
-		3D3FC85524CB275B0010EAC3 /* LogTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableCell.swift; sourceTree = "<group>"; };
 		3D3FC85824CC11510010EAC3 /* StatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
 		3D3FC85A24D15CAB0010EAC3 /* BedtimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedtimeVC.swift; sourceTree = "<group>"; };
 		3D544D9D24FFE39F0082C775 /* TabScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScrollVC.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				3DA5C1F224EE4712001AB03D /* TimerAssets.swift */,
 				3D3FC85124C9D2280010EAC3 /* TimeLog.swift */,
-				3D3FC85524CB275B0010EAC3 /* LogTableCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,7 +326,6 @@
 				3D3FC85224C9D2280010EAC3 /* TimeLog.swift in Sources */,
 				3DA427A725077844006BFAA7 /* RecordCell.swift in Sources */,
 				3DC0853C25072B0E00C436E2 /* StatisticsVC.swift in Sources */,
-				3D3FC85624CB275B0010EAC3 /* LogTableCell.swift in Sources */,
 				3D7C2F9D24E1B60A0058A71D /* TimerSettingVC.swift in Sources */,
 				3D544D9E24FFE39F0082C775 /* TabScrollVC.swift in Sources */,
 			);

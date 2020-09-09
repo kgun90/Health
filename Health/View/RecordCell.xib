@@ -14,131 +14,154 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="KGk-i7-Jjw" customClass="RecordCell" customModule="Health" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="99"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="19" indentationWidth="10" rowHeight="150" id="KGk-i7-Jjw" customClass="RecordCell" customModule="Health" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="129"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="343" height="99"/>
+                <rect key="frame" x="0.0" y="0.0" width="343" height="129"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vc-Tw-coc">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="99"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vc-Tw-coc">
+                        <rect key="frame" x="0.0" y="10" width="343" height="109"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayq-6z-nh1">
+                                <rect key="frame" x="33" y="83.5" width="49.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="14"/>
+                                <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3h-Wk-l7M">
+                                <rect key="frame" x="135.5" y="83.5" width="24.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="14"/>
+                                <color key="textColor" red="0.47058823529999999" green="0.51764705879999995" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M91-rC-X5i">
+                                <rect key="frame" x="209" y="83.5" width="18.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="14"/>
+                                <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fND-z7-zPI">
+                                <rect key="frame" x="269.5" y="83.5" width="38.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="14"/>
+                                <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDC-dg-6Md">
+                                <rect key="frame" x="35" y="57" width="34" height="41"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="28"/>
+                                <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90O-iW-4by">
+                                <rect key="frame" x="67" y="76.5" width="16" height="14.5"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="10"/>
+                                <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gj8-Zs-HgR">
+                                <rect key="frame" x="123" y="57" width="34" height="41"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="28"/>
+                                <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iit-2J-wez">
+                                <rect key="frame" x="212" y="57.5" width="16" height="40.5"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="28"/>
+                                <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLS-kK-Bq4">
+                                <rect key="frame" x="281" y="57.5" width="16" height="40.5"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="28"/>
+                                <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.09.01 20:15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brF-wN-UA7">
+                                <rect key="frame" x="231" y="30" width="87" height="19"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="13"/>
+                                <color key="textColor" red="0.47058823529999999" green="0.51764705879999995" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsP-V2-hLY">
+                                <rect key="frame" x="28" y="24" width="26.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="14"/>
+                                <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsQ-If-osk">
+                                <rect key="frame" x="79" y="8" width="89.5" height="48"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="33"/>
+                                <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szL-ga-1Hp">
+                                <rect key="frame" x="24" y="46" width="295" height="1"/>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="pc3-3U-M3t"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmY-HV-6kW">
+                                <rect key="frame" x="155" y="76" width="16" height="15"/>
+                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="10"/>
+                                <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="90O-iW-4by" firstAttribute="leading" secondItem="3vc-Tw-coc" secondAttribute="leading" constant="67" id="7LB-KI-uTn"/>
+                            <constraint firstItem="EsP-V2-hLY" firstAttribute="top" secondItem="3vc-Tw-coc" secondAttribute="top" constant="24" id="9BC-7e-hDR"/>
+                            <constraint firstAttribute="bottom" secondItem="ayq-6z-nh1" secondAttribute="bottom" constant="5" id="9wm-mD-HHF"/>
+                            <constraint firstAttribute="bottom" secondItem="90O-iW-4by" secondAttribute="bottom" constant="18" id="ABd-VB-Jx2"/>
+                            <constraint firstItem="LDC-dg-6Md" firstAttribute="leading" secondItem="3vc-Tw-coc" secondAttribute="leading" constant="35" id="Bw3-DK-kWY"/>
+                            <constraint firstItem="RsQ-If-osk" firstAttribute="top" secondItem="3vc-Tw-coc" secondAttribute="top" constant="8" id="DxK-qd-cTg"/>
+                            <constraint firstItem="F3h-Wk-l7M" firstAttribute="leading" secondItem="ayq-6z-nh1" secondAttribute="trailing" constant="53" id="H60-ok-GRY"/>
+                            <constraint firstAttribute="bottom" secondItem="Gj8-Zs-HgR" secondAttribute="bottom" constant="11" id="HUw-9U-tjY"/>
+                            <constraint firstAttribute="bottom" secondItem="GLS-kK-Bq4" secondAttribute="bottom" constant="11" id="I4z-pN-571"/>
+                            <constraint firstItem="szL-ga-1Hp" firstAttribute="leading" secondItem="3vc-Tw-coc" secondAttribute="leading" constant="24" id="IhV-XB-sUh"/>
+                            <constraint firstItem="szL-ga-1Hp" firstAttribute="top" secondItem="3vc-Tw-coc" secondAttribute="top" constant="46" id="Rc0-Ow-J5c"/>
+                            <constraint firstItem="dmY-HV-6kW" firstAttribute="leading" secondItem="3vc-Tw-coc" secondAttribute="leading" constant="155" id="ZCt-K6-bl7"/>
+                            <constraint firstAttribute="bottom" secondItem="F3h-Wk-l7M" secondAttribute="bottom" constant="5" id="b70-K8-0rP"/>
+                            <constraint firstAttribute="trailing" secondItem="fND-z7-zPI" secondAttribute="trailing" constant="35" id="ctT-UV-3mP"/>
+                            <constraint firstAttribute="bottom" secondItem="LDC-dg-6Md" secondAttribute="bottom" constant="11" id="fug-Wa-UGc"/>
+                            <constraint firstItem="RsQ-If-osk" firstAttribute="leading" secondItem="3vc-Tw-coc" secondAttribute="leading" constant="79" id="gtE-9o-laR"/>
+                            <constraint firstAttribute="trailing" secondItem="brF-wN-UA7" secondAttribute="trailing" constant="25" id="hT2-cy-xDV"/>
+                            <constraint firstItem="fND-z7-zPI" firstAttribute="leading" secondItem="M91-rC-X5i" secondAttribute="trailing" constant="42" id="hg2-da-9Lf"/>
+                            <constraint firstAttribute="bottom" secondItem="dmY-HV-6kW" secondAttribute="bottom" constant="18" id="i9b-9S-q5m"/>
+                            <constraint firstItem="ayq-6z-nh1" firstAttribute="leading" secondItem="3vc-Tw-coc" secondAttribute="leading" constant="33" id="jNm-rX-B0p"/>
+                            <constraint firstAttribute="trailing" secondItem="GLS-kK-Bq4" secondAttribute="trailing" constant="46" id="k5l-fk-P6y"/>
+                            <constraint firstItem="Gj8-Zs-HgR" firstAttribute="leading" secondItem="3vc-Tw-coc" secondAttribute="leading" constant="123" id="kCf-uR-Aas"/>
+                            <constraint firstAttribute="bottom" secondItem="Iit-2J-wez" secondAttribute="bottom" constant="11" id="mUI-gk-U0u"/>
+                            <constraint firstItem="brF-wN-UA7" firstAttribute="top" secondItem="3vc-Tw-coc" secondAttribute="top" constant="30" id="mhX-3k-uiA"/>
+                            <constraint firstAttribute="bottom" secondItem="fND-z7-zPI" secondAttribute="bottom" constant="5" id="oRJ-mp-YB9"/>
+                            <constraint firstAttribute="trailing" secondItem="Iit-2J-wez" secondAttribute="trailing" constant="115" id="og2-Q4-hs3"/>
+                            <constraint firstItem="EsP-V2-hLY" firstAttribute="leading" secondItem="3vc-Tw-coc" secondAttribute="leading" constant="28" id="t0u-iH-gFG"/>
+                            <constraint firstAttribute="trailing" secondItem="szL-ga-1Hp" secondAttribute="trailing" constant="24" id="tLt-Hs-EjV"/>
+                            <constraint firstAttribute="bottom" secondItem="M91-rC-X5i" secondAttribute="bottom" constant="5" id="tWw-iG-tHw"/>
+                        </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDC-dg-6Md">
-                        <rect key="frame" x="35" y="59.5" width="31.5" height="33"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="28"/>
-                        <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayq-6z-nh1">
-                        <rect key="frame" x="33" y="77.5" width="52.5" height="16.5"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="14"/>
-                        <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3h-Wk-l7M">
-                        <rect key="frame" x="138.5" y="77.5" width="29" height="16.5"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="14"/>
-                        <color key="textColor" red="0.47058823529999999" green="0.51764705879999995" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90O-iW-4by">
-                        <rect key="frame" x="64.5" y="74.5" width="16" height="12"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="10"/>
-                        <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmY-HV-6kW">
-                        <rect key="frame" x="155" y="67" width="16" height="15"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="10"/>
-                        <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gj8-Zs-HgR">
-                        <rect key="frame" x="120.5" y="57" width="31.5" height="33"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="28"/>
-                        <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iit-2J-wez">
-                        <rect key="frame" x="212" y="59.5" width="16" height="33"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="28"/>
-                        <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLS-kK-Bq4">
-                        <rect key="frame" x="281" y="59.5" width="16" height="33"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="28"/>
-                        <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M91-rC-X5i">
-                        <rect key="frame" x="217.5" y="77.5" width="21" height="16.5"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="14"/>
-                        <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fND-z7-zPI">
-                        <rect key="frame" x="266.5" y="77.5" width="41.5" height="16.5"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="14"/>
-                        <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsQ-If-osk">
-                        <rect key="frame" x="95" y="8" width="83" height="38.5"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="33"/>
-                        <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsP-V2-hLY">
-                        <rect key="frame" x="44" y="24" width="30" height="16.5"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="14"/>
-                        <color key="textColor" red="0.47058823529411764" green="0.51764705882352935" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.09.01 20:15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brF-wN-UA7">
-                        <rect key="frame" x="231" y="30" width="87" height="15.5"/>
-                        <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="13"/>
-                        <color key="textColor" red="0.47058823529999999" green="0.51764705879999995" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ayq-6z-nh1" firstAttribute="top" secondItem="90O-iW-4by" secondAttribute="bottom" constant="-9" id="6US-jA-3sM"/>
-                    <constraint firstAttribute="bottom" secondItem="Gj8-Zs-HgR" secondAttribute="bottom" constant="9" id="6zQ-qg-Ngo"/>
-                    <constraint firstItem="RsQ-If-osk" firstAttribute="leading" secondItem="EsP-V2-hLY" secondAttribute="trailing" constant="21" id="E0t-b7-Dks"/>
-                    <constraint firstAttribute="bottom" secondItem="F3h-Wk-l7M" secondAttribute="bottom" constant="5" id="GJZ-M0-b8U"/>
-                    <constraint firstItem="F3h-Wk-l7M" firstAttribute="leading" secondItem="ayq-6z-nh1" secondAttribute="trailing" constant="53" id="Ir9-2J-ETv"/>
-                    <constraint firstItem="RsQ-If-osk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Lfj-24-ouL"/>
-                    <constraint firstItem="M91-rC-X5i" firstAttribute="top" secondItem="Iit-2J-wez" secondAttribute="bottom" constant="-15" id="Lgj-KR-j0O"/>
-                    <constraint firstItem="ayq-6z-nh1" firstAttribute="top" secondItem="LDC-dg-6Md" secondAttribute="bottom" constant="-15" id="NGk-Jk-Mf4"/>
-                    <constraint firstAttribute="bottom" secondItem="fND-z7-zPI" secondAttribute="bottom" constant="5" id="OPN-CD-Uad"/>
-                    <constraint firstItem="ayq-6z-nh1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="33" id="QmU-Ph-3zD"/>
-                    <constraint firstItem="EsP-V2-hLY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="S3Y-Cj-UdU"/>
-                    <constraint firstAttribute="bottom" secondItem="ayq-6z-nh1" secondAttribute="bottom" constant="5" id="X44-5e-brt"/>
-                    <constraint firstItem="90O-iW-4by" firstAttribute="leading" secondItem="LDC-dg-6Md" secondAttribute="trailing" constant="-2" id="Y5U-GS-sdO"/>
-                    <constraint firstItem="EsP-V2-hLY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="44" id="aOW-R4-Qa2"/>
-                    <constraint firstAttribute="trailing" secondItem="GLS-kK-Bq4" secondAttribute="trailing" constant="46" id="fyZ-3G-4jh"/>
-                    <constraint firstItem="fND-z7-zPI" firstAttribute="top" secondItem="GLS-kK-Bq4" secondAttribute="bottom" constant="-15" id="gOJ-Jh-dno"/>
-                    <constraint firstItem="dmY-HV-6kW" firstAttribute="leading" secondItem="Gj8-Zs-HgR" secondAttribute="trailing" constant="-2" id="hhu-SU-KCX"/>
-                    <constraint firstAttribute="trailing" secondItem="brF-wN-UA7" secondAttribute="trailing" constant="25" id="i6P-1z-fka"/>
-                    <constraint firstItem="brF-wN-UA7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="kwV-4w-NtC"/>
-                    <constraint firstItem="GLS-kK-Bq4" firstAttribute="leading" secondItem="Iit-2J-wez" secondAttribute="trailing" constant="53" id="ltR-cd-LVU"/>
-                    <constraint firstItem="LDC-dg-6Md" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="oXK-oR-Srx"/>
-                    <constraint firstItem="Gj8-Zs-HgR" firstAttribute="leading" secondItem="LDC-dg-6Md" secondAttribute="trailing" constant="54" id="qgf-rd-YjB"/>
-                    <constraint firstAttribute="trailing" secondItem="fND-z7-zPI" secondAttribute="trailing" constant="35" id="qoy-zW-vrU"/>
-                    <constraint firstItem="F3h-Wk-l7M" firstAttribute="top" secondItem="dmY-HV-6kW" secondAttribute="bottom" constant="-9" id="sYO-cf-rNs"/>
-                    <constraint firstItem="M91-rC-X5i" firstAttribute="leading" secondItem="F3h-Wk-l7M" secondAttribute="trailing" constant="50" id="uFc-cn-AL5"/>
-                    <constraint firstAttribute="bottom" secondItem="M91-rC-X5i" secondAttribute="bottom" constant="5" id="wXT-Tp-7At"/>
+                    <constraint firstAttribute="bottom" secondItem="3vc-Tw-coc" secondAttribute="bottom" constant="10" id="2Ch-Z9-Zz7"/>
+                    <constraint firstItem="3vc-Tw-coc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="f4m-Ee-GB8"/>
+                    <constraint firstItem="3vc-Tw-coc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gnF-ge-xDd"/>
+                    <constraint firstAttribute="trailing" secondItem="3vc-Tw-coc" secondAttribute="trailing" id="qfZ-Df-7xt"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="blockView" destination="3vc-Tw-coc" id="Zjs-2r-F23"/>
+                <outlet property="recordTimeLabel" destination="brF-wN-UA7" id="nNR-EU-Xr4"/>
+                <outlet property="roundLabel" destination="GLS-kK-Bq4" id="Bmv-ln-QNW"/>
+                <outlet property="setLabel" destination="Iit-2J-wez" id="hK2-6Z-DCC"/>
+                <outlet property="totalRestLabel" destination="Gj8-Zs-HgR" id="hgo-Sj-iGd"/>
+                <outlet property="totalTimeLabel" destination="RsQ-If-osk" id="0p7-Ih-FaU"/>
+                <outlet property="totalWorkoutLabel" destination="ayq-6z-nh1" id="Ile-OW-qrp"/>
             </connections>
-            <point key="canvasLocation" x="148.55072463768118" y="167.07589285714286"/>
+            <point key="canvasLocation" x="148.55072463768118" y="163.05803571428569"/>
         </tableViewCell>
     </objects>
 </document>

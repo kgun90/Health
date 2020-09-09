@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bedtimeButton: UIButton!
     
     @IBOutlet var menuButtons: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,15 +35,13 @@ class ViewController: UIViewController {
         self.navigationController?.hidesBarsOnSwipe = false
         // 위로 스와이프 동작시 네비게이션 버튼이 위로 올라가는것을 해제함
         let bar: UINavigationBar! = self.navigationController?.navigationBar
-        let height: CGFloat = 156
-        let bounds = bar.bounds
+ 
         
         bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         bar.shadowImage = UIImage()
-        bar.backgroundColor = UIColor.red
-        bar.frame = CGRect(x: 0, y: 0, width: bounds.height, height: bounds.height + height)
-        // navigation bar color를 투명하게 만듬
-                
+        bar.backgroundColor = .white
+        
+        
     }
 
 }

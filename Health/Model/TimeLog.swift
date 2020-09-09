@@ -16,4 +16,5 @@ class TimeLog: Object {
     @objc dynamic var setCount: Int = 0
     @objc dynamic var roundCount: Int = 0
     @objc dynamic var dateTime: Date = Date()
+    @objc dynamic var workoutSeq: Date = Date()
 }

@@ -118,6 +118,7 @@ class TimerVC: UIViewController {
     var timerType = timerTypeState.countDown
     var nextStatus = timerStatus.stop
     var timerSet = TimerAssets()
+    var workoutSeq = Date()
     
     let realm = try! Realm()
 
@@ -233,7 +234,7 @@ class TimerVC: UIViewController {
             pauseState = timerStatus.restStart
             restTime = setTime.rest - timerCount
             timerStateChange(status)
-            createDB()
+            recordLog()
         case .pause:
             if pauseState == timerStatus.workoutStart {
                 if doubleTapSignal {
@@ -261,7 +262,8 @@ class TimerVC: UIViewController {
             timerStateChange(status)
            // pause 동작 중 Tap 동작시 Start 상태로 변경하며 타이머도 재동작
         case .stop:
-
+            workoutSeq = Date()
+         
             status = timerStatus.preWorkout
             initTimer(status)
             timerStateChange(status)
@@ -303,7 +305,7 @@ class TimerVC: UIViewController {
                 status = timerStatus.interval
             }
             restTime = setTime.rest
-            createDB()
+            recordLog()
      
             countSetRound()
             initTimer(status)
@@ -508,28 +510,32 @@ class TimerVC: UIViewController {
         self.nextTimeLabel.text = String(format: "%02d:%02d", timerLabel/60, timerLabel%60)
     }
     
-  
+//MARK: - Log write
+    
+    func recordLog(){
+        let timeLog = TimeLog()
+        timeLog.workoutTime = workoutTime
+        timeLog.restTime = restTime
+        timeLog.dateTime = Date()
+        timeLog.setCount = currentSet
+        timeLog.roundCount = currentRound
+        timeLog.workoutSeq = workoutSeq
 
+        delegate?.LogData(data: timeLog)
+        createDB(timeLog)
+    }
 //MARK: - Realm DB
   
-    func createDB(){
-        let timeLog = TimeLog()
-           timeLog.workoutTime = workoutTime
-           timeLog.restTime = restTime
-           timeLog.dateTime = Date()
-           timeLog.setCount = currentSet
-           timeLog.roundCount = currentRound
-        
-        delegate?.LogData(data: timeLog)
-    
-           do {
-               try realm.write{
+    func createDB(_ timeLog: TimeLog){
+
+        do {
+            try realm.write{
                 realm.add(timeLog)
-               }
-           } catch {
-               print("ERRPORRRRRRR")
            }
-       }
+        } catch {
+           print("ERRPORRRRRRR")
+        }
+    }
     @IBAction func deleteDB(_ sender: Any) {
         try! realm.write({
             realm.deleteAll()

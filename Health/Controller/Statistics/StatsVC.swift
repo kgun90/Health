@@ -11,7 +11,18 @@ import RealmSwift
 import Charts
 
 class StatsVC: UIViewController, IValueFormatter{
-     
+    private let topView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        return view
+    }()
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
     let realm = try! Realm()
     
     var selectedDate = Date()
@@ -28,6 +39,25 @@ class StatsVC: UIViewController, IValueFormatter{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addSubview(topView)
+        self.topView.addSubview(titleLabel)
+        
+        titleLabel.font = UIFont(name: "Jost*", size: 40)
+        titleLabel.text = "Statistics"
+        
+        NSLayoutConstraint.activate([
+            topView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            topView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            topView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            topView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.19)
+        ])
+        
+        NSLayoutConstraint.activate([
+              titleLabel.leadingAnchor.constraint(equalTo: topView.leadingAnchor, constant: 24),
+              titleLabel.topAnchor.constraint(equalTo: topView.topAnchor, constant: 84),
+          ])
+
         logData = Array(realm.objects(TimeLog.self))
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
@@ -114,38 +144,38 @@ extension StatsVC: UIPickerViewDelegate, UIPickerViewDataSource {
         return 1
         // 선택 가능한 리스트의 개수를 반환함, 몇개의 선택 가능한 리스트를 표시할것인가
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerDate.count
         // pickerview에 표시될 항목의 개수를 반환하는 메서드
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
+
         return pickerDate[row]
         // PickerView내 특정 위치(row)선택 시 그위치에 해당하는 문자열 반환 메서드
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         datePickerPreview.text = pickerDate[row]
         workoutChart(pickerDate[row])
-        
+
     }
-    
+
     func createPickerView() {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         datePickerPreview.inputView = pickerView
-        
+
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissPickerView))
         toolBar.setItems([doneBtn], animated: true)
         toolBar.isUserInteractionEnabled = true
-        
+
         datePickerPreview.inputAccessoryView = toolBar
-           
+
     }
     @objc func dismissPickerView() {
         self.view.endEditing(true)
-       
+
     }
 }
