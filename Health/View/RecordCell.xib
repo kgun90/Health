@@ -159,7 +159,7 @@
                 <outlet property="setLabel" destination="Iit-2J-wez" id="hK2-6Z-DCC"/>
                 <outlet property="totalRestLabel" destination="Gj8-Zs-HgR" id="hgo-Sj-iGd"/>
                 <outlet property="totalTimeLabel" destination="RsQ-If-osk" id="0p7-Ih-FaU"/>
-                <outlet property="totalWorkoutLabel" destination="ayq-6z-nh1" id="Ile-OW-qrp"/>
+                <outlet property="totalWorkoutLabel" destination="LDC-dg-6Md" id="g8c-eE-7pY"/>
             </connections>
             <point key="canvasLocation" x="148.55072463768118" y="163.05803571428569"/>
         </tableViewCell>

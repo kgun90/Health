@@ -6,11 +6,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Jost-500-Medium.otf">
-            <string>Jost-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -20,24 +15,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyh-Y5-CKu">
-                                <rect key="frame" x="86" y="401" width="243" height="94"/>
-                                <fontDescription key="fontDescription" name="Jost-Medium" family="Jost*" pointSize="65"/>
-                                <color key="textColor" red="0.16470588235294117" green="0.1803921568627451" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Tz-Gd-aah">
+                                <rect key="frame" x="47" y="406" width="320" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="33h-5l-sJY"/>
+                                    <constraint firstAttribute="width" constant="320" id="au3-FN-js5"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="uyh-Y5-CKu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Guh-CH-xoz"/>
-                            <constraint firstItem="uyh-Y5-CKu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LmR-hQ-bQh"/>
+                            <constraint firstItem="6Tz-Gd-aah" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YnW-PL-xcM"/>
+                            <constraint firstItem="6Tz-Gd-aah" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="uE0-76-Tls"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Title.png" width="470" height="126"/>
+    </resources>
 </document>

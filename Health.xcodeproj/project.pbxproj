@@ -24,8 +24,10 @@
 		3D89535D24C6C785002612C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D89535B24C6C785002612C4 /* Main.storyboard */; };
 		3D89535F24C6C790002612C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D89535E24C6C790002612C4 /* Assets.xcassets */; };
 		3D89536224C6C790002612C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D89536024C6C790002612C4 /* LaunchScreen.storyboard */; };
+		3D91DEB0250A78EE00CA995F /* newChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91DEAF250A78EE00CA995F /* newChartVC.swift */; };
 		3DA427A725077844006BFAA7 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA427A525077844006BFAA7 /* RecordCell.swift */; };
 		3DA427A825077844006BFAA7 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA427A625077844006BFAA7 /* RecordCell.xib */; };
+		3DA427AC25093FD1006BFAA7 /* Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DA427AB25093FD1006BFAA7 /* Title.png */; };
 		3DA5C1F324EE4712001AB03D /* TimerAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5C1F224EE4712001AB03D /* TimerAssets.swift */; };
 		3DA5C1F724F36DB1001AB03D /* Jost-500-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DA5C1F424F36D51001AB03D /* Jost-500-Medium.otf */; };
 		3DA5C1F824F36DB4001AB03D /* Jost-400-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DA5C1F524F36D8F001AB03D /* Jost-400-Book.otf */; };
@@ -54,8 +56,10 @@
 		3D89535E24C6C790002612C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D89536124C6C790002612C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D89536324C6C790002612C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D91DEAF250A78EE00CA995F /* newChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newChartVC.swift; sourceTree = "<group>"; };
 		3DA427A525077844006BFAA7 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		3DA427A625077844006BFAA7 /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
+		3DA427AB25093FD1006BFAA7 /* Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Title.png; sourceTree = "<group>"; };
 		3DA5C1F224EE4712001AB03D /* TimerAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAssets.swift; sourceTree = "<group>"; };
 		3DA5C1F424F36D51001AB03D /* Jost-500-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-500-Medium.otf"; sourceTree = "<group>"; };
 		3DA5C1F524F36D8F001AB03D /* Jost-400-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-400-Book.otf"; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		3D89535424C6C785002612C4 /* Health */ = {
 			isa = PBXGroup;
 			children = (
+				3DA427AB25093FD1006BFAA7 /* Title.png */,
 				3DA5C1F624F36D8F001AB03D /* Jost-300-Light.otf */,
 				3DA5C1F524F36D8F001AB03D /* Jost-400-Book.otf */,
 				3DA5C1F424F36D51001AB03D /* Jost-500-Medium.otf */,
@@ -169,6 +174,7 @@
 				3DC0853B25072B0E00C436E2 /* StatisticsVC.swift */,
 				3DC0853D25072B6B00C436E2 /* RecordVC.swift */,
 				3D3FC85824CC11510010EAC3 /* StatsVC.swift */,
+				3D91DEAF250A78EE00CA995F /* newChartVC.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -252,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DA427A825077844006BFAA7 /* RecordCell.xib in Resources */,
+				3DA427AC25093FD1006BFAA7 /* Title.png in Resources */,
 				3DA5C1F924F36DB6001AB03D /* Jost-300-Light.otf in Resources */,
 				3D89536224C6C790002612C4 /* LaunchScreen.storyboard in Resources */,
 				3D89535F24C6C790002612C4 /* Assets.xcassets in Resources */,
@@ -319,6 +326,7 @@
 				3D3FC85924CC11510010EAC3 /* StatsVC.swift in Sources */,
 				3D89535A24C6C785002612C4 /* ViewController.swift in Sources */,
 				3D89535624C6C785002612C4 /* AppDelegate.swift in Sources */,
+				3D91DEB0250A78EE00CA995F /* newChartVC.swift in Sources */,
 				3D544DA02500E0D00082C775 /* LogVC.swift in Sources */,
 				3D221A3424FB82A0009D03C5 /* MyTableViewCell.swift in Sources */,
 				3D3FC85B24D15CAB0010EAC3 /* BedtimeVC.swift in Sources */,

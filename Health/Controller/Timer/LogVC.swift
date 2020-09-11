@@ -143,9 +143,11 @@ extension LogVC: UITableViewDelegate, UITableViewDataSource {
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath as IndexPath) as! MyTableViewCell
+        
         let filteredLog = resultTimeLog.filter({
             $0.roundCount == indexPath.row + 1
         })
+
         let dateFormatter = DateFormatter()
          dateFormatter.dateFormat = "HH:mm:ss"
         filteredLog.forEach({

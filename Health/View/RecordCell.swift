@@ -10,13 +10,14 @@ import UIKit
 
 class RecordCell: UITableViewCell {
     @IBOutlet weak var blockView: UIView!
-    @IBOutlet weak var totalTimeLabel: UILabel!
     
+    @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var recordTimeLabel: UILabel!
     @IBOutlet weak var totalWorkoutLabel: UILabel!
     @IBOutlet weak var totalRestLabel: UILabel!
     @IBOutlet weak var setLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

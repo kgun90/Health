@@ -82,6 +82,8 @@ class TimerVC: UIViewController {
     
     var delegate: TimerDataDelegate?
     
+    var setArray = [TimeLog]()
+    
     var setUp: Int {
         get {
             return currentSet
@@ -317,6 +319,7 @@ class TimerVC: UIViewController {
         case .stop:
             initTimer(status)
             timerStateChange(status)
+            createDB(setArray)
             
         case .interval:
             status = timerStatus.workoutStart
@@ -514,6 +517,7 @@ class TimerVC: UIViewController {
     
     func recordLog(){
         let timeLog = TimeLog()
+       
         timeLog.workoutTime = workoutTime
         timeLog.restTime = restTime
         timeLog.dateTime = Date()
@@ -522,12 +526,17 @@ class TimerVC: UIViewController {
         timeLog.workoutSeq = workoutSeq
 
         delegate?.LogData(data: timeLog)
-        createDB(timeLog)
+        
+        setArray.append(timeLog)
+        
+    
     }
+    
+    
 //MARK: - Realm DB
   
-    func createDB(_ timeLog: TimeLog){
-
+    func createDB(_ timeLog: [TimeLog]){
+        setArray = []
         do {
             try realm.write{
                 realm.add(timeLog)

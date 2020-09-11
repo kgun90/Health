@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         
         bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         bar.shadowImage = UIImage()
-        bar.backgroundColor = .white
+        bar.backgroundColor = .clear
         
         
     }

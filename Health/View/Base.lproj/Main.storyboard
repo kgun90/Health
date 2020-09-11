@@ -632,23 +632,11 @@
                                 <rect key="frame" x="20" y="214" width="335" height="386"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f15-WU-ReF">
-                                <rect key="frame" x="87.666666666666686" y="170" width="200" height="34"/>
-                                <color key="backgroundColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="2gF-zd-ebw"/>
-                                    <constraint firstAttribute="height" constant="34" id="5dE-A0-05v"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ECJ-92-GiA" firstAttribute="leading" secondItem="LaX-an-noQ" secondAttribute="leading" constant="20" id="17X-qh-Fog"/>
                             <constraint firstItem="LaX-an-noQ" firstAttribute="trailing" secondItem="ECJ-92-GiA" secondAttribute="trailing" constant="20" id="7Qs-oz-rEL"/>
-                            <constraint firstItem="f15-WU-ReF" firstAttribute="centerX" secondItem="5hj-go-iEh" secondAttribute="centerX" id="LJ8-CK-kSt"/>
-                            <constraint firstItem="ECJ-92-GiA" firstAttribute="top" secondItem="f15-WU-ReF" secondAttribute="bottom" constant="10" id="iaI-dE-INM"/>
                             <constraint firstAttribute="bottom" secondItem="ECJ-92-GiA" secondAttribute="bottom" constant="212" id="qLr-GO-1oz"/>
                             <constraint firstItem="ECJ-92-GiA" firstAttribute="top" secondItem="5hj-go-iEh" secondAttribute="top" constant="214" id="qra-Qp-7mL"/>
                         </constraints>
@@ -659,12 +647,26 @@
                     </navigationItem>
                     <connections>
                         <outlet property="chartView" destination="ECJ-92-GiA" id="M3t-R2-Dbu"/>
-                        <outlet property="datePickerPreview" destination="f15-WU-ReF" id="LcO-jy-eRp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcX-ps-3Gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3588" y="92"/>
+        </scene>
+        <!--New ChartVC-->
+        <scene sceneID="FFW-C4-BdD">
+            <objects>
+                <viewController storyboardIdentifier="newChartVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h1F-Gy-M5r" customClass="newChartVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vz6-0r-mg2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="H4f-iy-nNm"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSE-vs-9ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4514" y="78"/>
         </scene>
         <!--StatisticsVC-->
         <scene sceneID="UBc-jy-aVN">

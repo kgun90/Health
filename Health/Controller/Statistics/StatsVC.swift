@@ -24,61 +24,24 @@ class StatsVC: UIViewController, IValueFormatter{
         return label
     }()
     let realm = try! Realm()
-    
-    var selectedDate = Date()
+       
     let dateFormatter = DateFormatter()
 
-    @IBOutlet weak var dataTF: UITextField!
     @IBOutlet weak var chartView: BarChartView!
-    @IBOutlet weak var datePickerPreview: UITextField!
-    
-    let datePicker = UIDatePicker()
-    
+        
     var logData: Array<TimeLog>?
     var pickerDate: Array<String> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(topView)
-        self.topView.addSubview(titleLabel)
-        
-        titleLabel.font = UIFont(name: "Jost*", size: 40)
-        titleLabel.text = "Statistics"
-        
-        NSLayoutConstraint.activate([
-            topView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            topView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            topView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            topView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.19)
-        ])
-        
-        NSLayoutConstraint.activate([
-              titleLabel.leadingAnchor.constraint(equalTo: topView.leadingAnchor, constant: 24),
-              titleLabel.topAnchor.constraint(equalTo: topView.topAnchor, constant: 84),
-          ])
 
         logData = Array(realm.objects(TimeLog.self))
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        var tmpArray: [String] = []
-        logData!.forEach {
-            tmpArray.append(dateFormatter.string(from: $0.dateTime))
-        }
-        tmpArray.map { if !pickerDate.contains($0) { pickerDate.append($0)}}
-                
-        createPickerView()
-        workoutChart(dateFormatter.string(from: Date()))
-        
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if isMovingFromParent {
-            print("moving to parent")
-        }
+    
     }
 
     func workoutChart(_ selectedDate: String) {
+    
         var workoutBarChartEntry = [BarChartDataEntry]()
         var dateLabel: [String] = []
         let timeFormat = DateFormatter()
@@ -91,7 +54,7 @@ class StatsVC: UIViewController, IValueFormatter{
             
             workoutBarChartEntry.append(workoutSpendValue)
             
-            dateLabel.append("\($0.setCount)세트")
+            dateLabel.append("\($0.dateTime)")
        
         })
 
@@ -122,7 +85,6 @@ class StatsVC: UIViewController, IValueFormatter{
         // xAxis label 항목별 표시 옵션
         
         chartView.xAxis.drawGridLinesEnabled = false
-
         chartView.data = chartData
     }
     
@@ -134,48 +96,5 @@ class StatsVC: UIViewController, IValueFormatter{
             return "\(Int(value)/60)분\(Int(value)%60)초"
         }
         return "\(Int(value))초"
-    }
-}
-
-extension StatsVC: UIPickerViewDelegate, UIPickerViewDataSource {
- 
-
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-        // 선택 가능한 리스트의 개수를 반환함, 몇개의 선택 가능한 리스트를 표시할것인가
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerDate.count
-        // pickerview에 표시될 항목의 개수를 반환하는 메서드
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-
-        return pickerDate[row]
-        // PickerView내 특정 위치(row)선택 시 그위치에 해당하는 문자열 반환 메서드
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        datePickerPreview.text = pickerDate[row]
-        workoutChart(pickerDate[row])
-
-    }
-
-    func createPickerView() {
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        datePickerPreview.inputView = pickerView
-
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissPickerView))
-        toolBar.setItems([doneBtn], animated: true)
-        toolBar.isUserInteractionEnabled = true
-
-        datePickerPreview.inputAccessoryView = toolBar
-
-    }
-    @objc func dismissPickerView() {
-        self.view.endEditing(true)
-
     }
 }
