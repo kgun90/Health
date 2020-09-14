@@ -18,7 +18,7 @@ class StatisticsVC: TabmanViewController {
         super.viewDidLoad()
        
         let recordVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RecordVC") as! RecordVC
-        let statsVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newChartVC") as! newChartVC
+        let statsVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StatsVC") as! StatsVC
         
         
         viewControllers.append(recordVC)

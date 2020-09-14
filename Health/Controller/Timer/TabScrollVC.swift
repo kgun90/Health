@@ -59,6 +59,9 @@ class TabScrollVC: TabmanViewController {
           self.performSegue(withIdentifier: "showTimerSettingVC", sender: self)
           // Storyboard에서 Scroll -> TimerSettingVC Segue 를 설정하고 이를 버튼 동작으로 실행한다.
       }
+    deinit {
+        print("TabScrollVC Deinit")
+    }
 }
 extension TabScrollVC: PageboyViewControllerDataSource, TMBarDataSource {
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {

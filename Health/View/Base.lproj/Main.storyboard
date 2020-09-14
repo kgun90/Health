@@ -248,7 +248,7 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier=" " contentHorizontalAlignment="center" contentVerticalAlignment="center" text="3 min" textAlignment="right" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="hQr-xR-HcS">
                                         <rect key="frame" x="258" y="7" width="73" height="32"/>
-                                        <color key="backgroundColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -415,7 +415,7 @@
                         <outlet property="roundTextfield" destination="WuU-sE-mKw" id="vL0-qd-hQR"/>
                         <outlet property="setTextfield" destination="LXv-1d-7qI" id="Lac-hq-Wwj"/>
                         <outlet property="workoutTimeLabel" destination="6pv-FI-3Fh" id="nlS-mK-LEw"/>
-                        <outlet property="workoutTimeTextfiled" destination="hQr-xR-HcS" id="MMr-Xl-E41"/>
+                        <outlet property="workoutTimeTextfield" destination="hQr-xR-HcS" id="MMr-Xl-E41"/>
                         <outlet property="workoutTimerTypeLabel" destination="2uU-UN-z3x" id="RjY-Po-32y"/>
                         <outletCollection property="viewLayout" destination="AH3-j3-hHD" collectionClass="NSMutableArray" id="Yvx-fO-74p"/>
                         <outletCollection property="viewLayout" destination="ZAc-ws-SHq" collectionClass="NSMutableArray" id="Jew-6j-0yn"/>
@@ -479,13 +479,7 @@
                                     <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICx-F7-15C">
-                                <rect key="frame" x="187.66666666666666" y="561" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="30"/>
-                                <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Tap to Start Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xse-7x-Yue">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Tap to Start Timer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xse-7x-Yue">
                                 <rect key="frame" x="73.333333333333329" y="522.33333333333337" width="228.66666666666669" height="43.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="30"/>
                                 <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -538,12 +532,8 @@
                                     <constraint firstItem="yvT-76-8rd" firstAttribute="leading" secondItem="aSb-RB-m2d" secondAttribute="leading" constant="12" id="qrf-1q-uYB"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQk-Ec-9ae">
-                                <rect key="frame" x="62.666666666666657" y="373" width="249.99999999999997" height="107"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="107" id="CZa-Xi-Hqe"/>
-                                    <constraint firstAttribute="width" constant="250" id="Vs1-pI-r0T"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQk-Ec-9ae">
+                                <rect key="frame" x="66" y="373" width="243" height="130.33333333333337"/>
                                 <fontDescription key="fontDescription" name="Jost-Book" family="Jost*" pointSize="90"/>
                                 <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -579,7 +569,6 @@
                             <constraint firstItem="xse-7x-Yue" firstAttribute="centerX" secondItem="1mN-Qe-Y3l" secondAttribute="centerX" id="1sR-5G-OTu"/>
                             <constraint firstItem="u0b-z8-oT1" firstAttribute="leading" secondItem="1mN-Qe-Y3l" secondAttribute="leading" constant="20" id="7BA-dk-IeU"/>
                             <constraint firstItem="aSb-RB-m2d" firstAttribute="centerX" secondItem="1mN-Qe-Y3l" secondAttribute="centerX" id="8TJ-fE-yNp"/>
-                            <constraint firstItem="ICx-F7-15C" firstAttribute="top" secondItem="xse-7x-Yue" secondAttribute="bottom" constant="-5" id="BLi-CK-BTX"/>
                             <constraint firstItem="Iz2-vM-Q9z" firstAttribute="centerX" secondItem="1mN-Qe-Y3l" secondAttribute="centerX" id="BvE-vz-1Ga"/>
                             <constraint firstItem="tMr-W4-ZYR" firstAttribute="top" secondItem="HFP-iE-QCy" secondAttribute="top" constant="40" id="JE9-HC-NyN"/>
                             <constraint firstAttribute="top" secondItem="Iz2-vM-Q9z" secondAttribute="top" id="KRN-Oh-6lG"/>
@@ -588,7 +577,6 @@
                             <constraint firstItem="aSb-RB-m2d" firstAttribute="top" secondItem="HFP-iE-QCy" secondAttribute="bottom" constant="20" id="OZM-YY-wtq"/>
                             <constraint firstItem="HFP-iE-QCy" firstAttribute="top" secondItem="gUj-yg-Ast" secondAttribute="bottom" id="R7n-F0-yDY"/>
                             <constraint firstItem="HFP-iE-QCy" firstAttribute="top" secondItem="u0b-z8-oT1" secondAttribute="bottom" constant="5" id="RDW-az-Vhx"/>
-                            <constraint firstItem="ICx-F7-15C" firstAttribute="centerX" secondItem="1mN-Qe-Y3l" secondAttribute="centerX" id="SLz-u2-ePk"/>
                             <constraint firstItem="hOI-Os-Eeb" firstAttribute="trailing" secondItem="HFP-iE-QCy" secondAttribute="trailing" constant="-10" id="Tnn-QP-lcV"/>
                             <constraint firstItem="HFP-iE-QCy" firstAttribute="top" secondItem="hOI-Os-Eeb" secondAttribute="top" constant="-5" id="UEm-Xa-POr"/>
                             <constraint firstItem="HFP-iE-QCy" firstAttribute="centerX" secondItem="1mN-Qe-Y3l" secondAttribute="centerX" id="Wp8-t6-5mp"/>
@@ -603,6 +591,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kHl-Ml-cWH"/>
                     <connections>
+                        <outlet property="nextLabel" destination="yvT-76-8rd" id="Uv3-DE-Nez"/>
                         <outlet property="nextState" destination="aSb-RB-m2d" id="05O-YR-ucY"/>
                         <outlet property="nextStateLabel" destination="CLY-SP-Uz3" id="udW-I4-A9e"/>
                         <outlet property="nextTimeLabel" destination="K0a-NW-APX" id="Kiv-8d-fQF"/>
@@ -612,7 +601,6 @@
                         <outlet property="timerMain" destination="HFP-iE-QCy" id="5Zf-Qt-ATk"/>
                         <outlet property="timerMainLabel" destination="xse-7x-Yue" id="LgX-LL-wlf"/>
                         <outlet property="timerStatusLabel" destination="tMr-W4-ZYR" id="Jm9-06-Tkj"/>
-                        <outlet property="timerSubLabel" destination="ICx-F7-15C" id="2Og-ow-yrM"/>
                         <outlet property="timerTypeLabel" destination="u0b-z8-oT1" id="YxN-fe-da7"/>
                     </connections>
                 </viewController>
@@ -621,42 +609,9 @@
             <point key="canvasLocation" x="2788" y="-563"/>
         </scene>
         <!--StatsVC-->
-        <scene sceneID="4tA-TU-nWn">
-            <objects>
-                <viewController storyboardIdentifier="StatsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3wC-bB-aYa" customClass="StatsVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5hj-go-iEh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECJ-92-GiA" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="214" width="335" height="386"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="ECJ-92-GiA" firstAttribute="leading" secondItem="LaX-an-noQ" secondAttribute="leading" constant="20" id="17X-qh-Fog"/>
-                            <constraint firstItem="LaX-an-noQ" firstAttribute="trailing" secondItem="ECJ-92-GiA" secondAttribute="trailing" constant="20" id="7Qs-oz-rEL"/>
-                            <constraint firstAttribute="bottom" secondItem="ECJ-92-GiA" secondAttribute="bottom" constant="212" id="qLr-GO-1oz"/>
-                            <constraint firstItem="ECJ-92-GiA" firstAttribute="top" secondItem="5hj-go-iEh" secondAttribute="top" constant="214" id="qra-Qp-7mL"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="LaX-an-noQ"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="nB0-gB-eUH">
-                        <barButtonItem key="backBarButtonItem" title=" " id="BWm-cc-Rgj"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="chartView" destination="ECJ-92-GiA" id="M3t-R2-Dbu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YcX-ps-3Gc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3588" y="92"/>
-        </scene>
-        <!--New ChartVC-->
         <scene sceneID="FFW-C4-BdD">
             <objects>
-                <viewController storyboardIdentifier="newChartVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h1F-Gy-M5r" customClass="newChartVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StatsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h1F-Gy-M5r" customClass="StatsVC" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vz6-0r-mg2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -666,7 +621,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSE-vs-9ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4514" y="78"/>
+            <point key="canvasLocation" x="3588" y="92"/>
         </scene>
         <!--StatisticsVC-->
         <scene sceneID="UBc-jy-aVN">

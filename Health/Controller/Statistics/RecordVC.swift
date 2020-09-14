@@ -60,8 +60,10 @@ class RecordVC: UIViewController {
         self.view.addSubview(recordTable)
         self.topView.addSubview(titleLabel)
   
+  
         titleLabel.textColor = textColor
-        titleLabel.font = UIFont(name: "Jost*", size: 40.0)
+        titleLabel.font = UIFont(name: "Jost-Medium", size: 40.0)
+ 
         titleLabel.text = "Statistics"
         titleLabel.backgroundColor = .clear
         

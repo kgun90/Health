@@ -15,7 +15,7 @@ class TimerSettingVC: UIViewController {
     
     @IBOutlet weak var countOptionSwitch: UISwitch!
 
-    @IBOutlet weak var workoutTimeTextfiled: UITextField!
+    @IBOutlet weak var workoutTimeTextfield: UITextField!
     @IBOutlet weak var restTimeTextfield: UITextField!
     @IBOutlet weak var intervalTimeTextfield: UITextField!
     
@@ -45,48 +45,52 @@ class TimerSettingVC: UIViewController {
     let roundCountSet = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     
     
-    var wtime = 3
-    var rtime = 1
-    var itime = 5
-    var scount = 5
-    var rcount = 5
+    var wtime = 0
+    var rtime = 0
+    var itime = 0
+    var scount = 0
+    var rcount = 0
+    var timeResult = 0
     var countType = false
+    
+    let defaults = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+      
         viewLayout.forEach { $0.layer.cornerRadius = 12.0 }
         pickerLayout.forEach {
             $0.addRightPadding()
             $0.layer.cornerRadius = 8.0
         }
-//        UserDefaults.standard.register(defaults: ["workoutTime" : "\(wtime) min"])
     }
+  
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        workoutTimeTextfield.backgroundColor = disabledTextColor
 
-
-     countOptionSwitch.isOn = UserDefaults.standard.bool(forKey: "switchState")
+        countOptionSwitch.isOn = defaults.bool(forKey: "switchState")
+        wtime = defaults.integer(forKey: "workoutTime")
+        rtime = defaults.integer(forKey: "restTime")
+        itime = defaults.integer(forKey: "intervalTime")
+        scount = defaults.integer(forKey: "setCount")
+        rcount = defaults.integer(forKey: "roundCount")
+        
 //        workoutTimeTextfiled.isUserInteractionEnabled = false
 
         countTypeChange()
         totalTime()
         
-        workoutTimeTextfiled.inputView = workoutTimePickerview
+        workoutTimeTextfield.inputView = workoutTimePickerview
         restTimeTextfield.inputView = restTimePickerview
         intervalTimeTextfield.inputView = intervalTimePickerview
         setTextfield.inputView = setPickerview
         roundTextfield.inputView = roundPickerview
         
-//
-//        print(UserDefaults.standard.string(forKey: "workoutTime"))
-//        if UserDefaults.standard.string(forKey: "workoutTime") == nil {
-//            workoutTimeTextfiled.text = "\(wtime) min"
-//        } else {
-            workoutTimeTextfiled.text = UserDefaults.standard.string(forKey: "workoutTime")
-//        }
-        
+//        workoutTimeTextfiled.text = UserDefaults.standard.string(forKey: "workoutTime")
+
+        workoutTimeTextfield.text = "\(wtime) min"
         restTimeTextfield.text = "\(rtime) min"
         intervalTimeTextfield.text = "\(itime) sec"
         setTextfield.text = "\(scount)"
@@ -124,15 +128,15 @@ class TimerSettingVC: UIViewController {
             workoutTimerTypeLabel.text = "Count Down"
             workoutTimeLabel.textColor = activeTextColor
             estTimeLabel.textColor = activeTextColor
-            workoutTimeTextfiled.isUserInteractionEnabled = true
-            workoutTimeTextfiled.backgroundColor = UIColor(red: 52/255, green: 151/255, blue: 253/255, alpha: 1.0)
+            workoutTimeTextfield.isUserInteractionEnabled = true
+            workoutTimeTextfield.backgroundColor = UIColor(red: 52/255, green: 151/255, blue: 253/255, alpha: 1.0)
        
         case false:
             workoutTimerTypeLabel.text = "Count Up"
             workoutTimeLabel.textColor = disabledTextColor
             estTimeLabel.textColor = disabledTextColor
-            workoutTimeTextfiled.isUserInteractionEnabled = false
-            workoutTimeTextfiled.backgroundColor = disabledTextColor
+            workoutTimeTextfield.isUserInteractionEnabled = false
+            workoutTimeTextfield.backgroundColor = disabledTextColor
         }
     }
     
@@ -140,6 +144,7 @@ class TimerSettingVC: UIViewController {
         switch countOptionSwitch.isOn {
         case true:
             let totalTime = ((((wtime + rtime) * 60 * scount) + itime) * rcount) - itime
+            timeResult = totalTime
             if totalTime > 3600 {
                 let hrs = totalTime/3600
                 let mins = totalTime - (hrs*3600)
@@ -153,10 +158,15 @@ class TimerSettingVC: UIViewController {
         }
     }
     func saveSettings() {
-        UserDefaults.standard.set(countOptionSwitch.isOn, forKey: "switchState")
-        UserDefaults.standard.set(workoutTimeTextfiled.text, forKey: "workoutTime")
+        defaults.set(countOptionSwitch.isOn, forKey: "switchState")
+        defaults.set(wtime, forKey: "workoutTime")
+        defaults.set(rtime, forKey: "restTime")
+        defaults.set(itime, forKey: "intervalTime")
+        defaults.set(scount, forKey: "setCount")
+        defaults.set(rcount, forKey: "roundCount")
+        defaults.set(timeResult, forKey: "totalTime")
     }
-
+    
 }
 
 extension TimerSettingVC: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -204,8 +214,8 @@ extension TimerSettingVC: UIPickerViewDelegate, UIPickerViewDataSource {
         
         switch pickerView.tag {
         case 1:
-            workoutTimeTextfiled.text = "\(workoutTimeSet[row]) min"
-            workoutTimeTextfiled.resignFirstResponder()
+            workoutTimeTextfield.text = "\(workoutTimeSet[row]) min"
+            workoutTimeTextfield.resignFirstResponder()
             wtime = workoutTimeSet[row]
         case 2:
             restTimeTextfield.text = "\(restTimeSet[row]) min"
@@ -227,6 +237,7 @@ extension TimerSettingVC: UIPickerViewDelegate, UIPickerViewDataSource {
              return
         }
         totalTime()
+        saveSettings()
     }
     
 

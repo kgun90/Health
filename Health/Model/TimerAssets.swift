@@ -9,14 +9,18 @@
 import UIKit
 
 struct TimerAssets {
-    var countType: Bool = true
-    var workoutTime: Int = 3
-    var restTime: Int = 1
-    var totalSet: Int = 5
-    var totalRound: Int = 5
-    var setInterval: Int = 3
-    var roundInterval: Int = 5
+    let bgColor: UIColor
+    let typeLabel: String
+    let statusLabel: String
+    let mainTabLabel: String
+    let timerFont: UIFont
     
-    var currentSet: Int = 1
-    var currentRound: Int = 1
+    init (color: UIColor, type: String, status: String, tab: String, font: UIFont) {
+        self.bgColor = color
+        self.typeLabel = type
+        self.statusLabel = status
+        self.mainTabLabel = tab
+        self.timerFont = font
+    }
+      
 }

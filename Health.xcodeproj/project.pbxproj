@@ -12,7 +12,6 @@
 		3D221A3524FB82A0009D03C5 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D221A3324FB82A0009D03C5 /* MyTableViewCell.xib */; };
 		3D3FC84E24C8515F0010EAC3 /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC84D24C8515F0010EAC3 /* TimerVC.swift */; };
 		3D3FC85224C9D2280010EAC3 /* TimeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85124C9D2280010EAC3 /* TimeLog.swift */; };
-		3D3FC85924CC11510010EAC3 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85824CC11510010EAC3 /* StatsVC.swift */; };
 		3D3FC85B24D15CAB0010EAC3 /* BedtimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3FC85A24D15CAB0010EAC3 /* BedtimeVC.swift */; };
 		3D544D9E24FFE39F0082C775 /* TabScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D544D9D24FFE39F0082C775 /* TabScrollVC.swift */; };
 		3D544DA02500E0D00082C775 /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D544D9F2500E0D00082C775 /* LogVC.swift */; };
@@ -24,7 +23,7 @@
 		3D89535D24C6C785002612C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D89535B24C6C785002612C4 /* Main.storyboard */; };
 		3D89535F24C6C790002612C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D89535E24C6C790002612C4 /* Assets.xcassets */; };
 		3D89536224C6C790002612C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D89536024C6C790002612C4 /* LaunchScreen.storyboard */; };
-		3D91DEB0250A78EE00CA995F /* newChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91DEAF250A78EE00CA995F /* newChartVC.swift */; };
+		3D91DEB0250A78EE00CA995F /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91DEAF250A78EE00CA995F /* StatsVC.swift */; };
 		3DA427A725077844006BFAA7 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA427A525077844006BFAA7 /* RecordCell.swift */; };
 		3DA427A825077844006BFAA7 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA427A625077844006BFAA7 /* RecordCell.xib */; };
 		3DA427AC25093FD1006BFAA7 /* Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DA427AB25093FD1006BFAA7 /* Title.png */; };
@@ -42,7 +41,6 @@
 		3D221A3324FB82A0009D03C5 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		3D3FC84D24C8515F0010EAC3 /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
 		3D3FC85124C9D2280010EAC3 /* TimeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLog.swift; sourceTree = "<group>"; };
-		3D3FC85824CC11510010EAC3 /* StatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
 		3D3FC85A24D15CAB0010EAC3 /* BedtimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedtimeVC.swift; sourceTree = "<group>"; };
 		3D544D9D24FFE39F0082C775 /* TabScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScrollVC.swift; sourceTree = "<group>"; };
 		3D544D9F2500E0D00082C775 /* LogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
@@ -56,7 +54,7 @@
 		3D89535E24C6C790002612C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D89536124C6C790002612C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D89536324C6C790002612C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D91DEAF250A78EE00CA995F /* newChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newChartVC.swift; sourceTree = "<group>"; };
+		3D91DEAF250A78EE00CA995F /* StatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
 		3DA427A525077844006BFAA7 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		3DA427A625077844006BFAA7 /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
 		3DA427AB25093FD1006BFAA7 /* Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Title.png; sourceTree = "<group>"; };
@@ -173,8 +171,7 @@
 			children = (
 				3DC0853B25072B0E00C436E2 /* StatisticsVC.swift */,
 				3DC0853D25072B6B00C436E2 /* RecordVC.swift */,
-				3D3FC85824CC11510010EAC3 /* StatsVC.swift */,
-				3D91DEAF250A78EE00CA995F /* newChartVC.swift */,
+				3D91DEAF250A78EE00CA995F /* StatsVC.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -323,10 +320,9 @@
 				3DC0853E25072B6B00C436E2 /* RecordVC.swift in Sources */,
 				3DA5C1F324EE4712001AB03D /* TimerAssets.swift in Sources */,
 				3DFFC42A24E4F76300E54C11 /* ExtensionTextField.swift in Sources */,
-				3D3FC85924CC11510010EAC3 /* StatsVC.swift in Sources */,
 				3D89535A24C6C785002612C4 /* ViewController.swift in Sources */,
 				3D89535624C6C785002612C4 /* AppDelegate.swift in Sources */,
-				3D91DEB0250A78EE00CA995F /* newChartVC.swift in Sources */,
+				3D91DEB0250A78EE00CA995F /* StatsVC.swift in Sources */,
 				3D544DA02500E0D00082C775 /* LogVC.swift in Sources */,
 				3D221A3424FB82A0009D03C5 /* MyTableViewCell.swift in Sources */,
 				3D3FC85B24D15CAB0010EAC3 /* BedtimeVC.swift in Sources */,

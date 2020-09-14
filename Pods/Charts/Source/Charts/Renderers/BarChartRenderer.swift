@@ -397,6 +397,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 
                 context.setFillColor(dataSet.barShadowColor.cgColor)
                 context.fill(barRect)
+            
             }
         }
         
@@ -432,7 +433,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
             }
             
             context.fill(barRect)
-            
+      
             if drawBorder
             {
                 context.setStrokeColor(borderColor.cgColor)

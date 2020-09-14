@@ -40,8 +40,10 @@ class LogVC: UIViewController, TimerDataDelegate{
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+   
+    let emptyLabel = UILabel()
     let screenHeight = UIScreen.main.bounds.height
+    let screenWidth = UIScreen.main.bounds.width
     let textColor = UIColor(red: 69/255, green: 79/255, blue: 99/255, alpha: 1.0)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +74,7 @@ class LogVC: UIViewController, TimerDataDelegate{
         self.view.addSubview(countRound)
 
         title.textColor = textColor
-        title.font = UIFont(name: "Jost*", size: 40.0)
+        title.font = UIFont(name: "Jost-Medium", size: 40.0)
         title.text = "Log"
         title.backgroundColor = .clear
 
@@ -96,9 +98,8 @@ class LogVC: UIViewController, TimerDataDelegate{
         ])
         NSLayoutConstraint.activate([
             title.leadingAnchor.constraint(equalTo: topView.leadingAnchor, constant: 24),
-            title.topAnchor.constraint(equalTo: topView.topAnchor, constant: 84),
-            title.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: -286),
-            title.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -14)
+            title.topAnchor.constraint(equalTo: topView.topAnchor, constant: 84)
+            
         ])
 
         NSLayoutConstraint.activate([
@@ -116,18 +117,38 @@ class LogVC: UIViewController, TimerDataDelegate{
             countSet.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 217),
             countSet.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -26)
         ])
-       
+        tableViewEmptyCheck()
+  
+      
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
+         
     }
-
+    func tableViewEmptyCheck(){
+       
+        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
+        emptyLabel.font = UIFont(name: "Jost*", size: screenWidth * 0.12)
+        emptyLabel.textAlignment = .center
+    
+        self.view.addSubview(emptyLabel)
+            
+        NSLayoutConstraint.activate([
+            emptyLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            emptyLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
+        emptyLabel.text = "Go Workout"
+       
+        emptyLabel.isHidden  = !resultTimeLog.isEmpty
+          
+        print(myTableView.visibleCells.isEmpty)
+    }
     func LogData(data: TimeLog) {
         self.resultTimeLog.append(data)
         countLabelDisplay(resultTimeLog.last?.setCount ?? 0, resultTimeLog.last?.roundCount ?? 0)
+        tableViewEmptyCheck()
         self.myTableView.reloadData()
+        
     }
     func countLabelDisplay(_ setCount: Int, _ roundCount: Int) {
         countSet.text = "\(setCount) SET"
@@ -202,7 +223,7 @@ extension LogVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return screenHeight*0.21
+        return screenHeight * 0.05 * CGFloat(UserDefaults.standard.integer(forKey: "setCount")+1)
     }
     
     
